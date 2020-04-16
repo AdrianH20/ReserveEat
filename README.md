@@ -1,7 +1,7 @@
 # ReserveEat
  Setup !</br>
  Step 1: Descarcati GitHub Desktop</br>
- Step 2: Dupa ce intrati in aplicatie, alegetiva un folder si da ti clone repository la https://github.com/AdrianH20/ReserveEat.git </br></br>
+ Step 2: Dupa ce intrati in aplicatie, alegetiva un folder si da ti clone repository-ul asta la https://github.com/AdrianH20/ReserveEat.git </br></br>
 
  Ce are proiectul acum: Ferestra de "Sign in" cu date hardcodate.(username:user, pass:1234)</br>
  In branch ul "Design" se vor face schimbari grafice si de cum va arata aplicatia client.</br>
