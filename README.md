@@ -3,7 +3,7 @@
  Step 1: Descarcati GitHub Desktop</br>
  Step 2: Dupa ce intrati in aplicatie, alegeti-va un folder si faceti clone la repository-ul asta  https://github.com/AdrianH20/ReserveEat.git</br>
  In prima faza toate commiturile si toate branchurile create se vor salva pe reposity ul local clonat mentionat anterior</br>
- Ce va recomand e sa lucrati pe un brach local la voi pe calculator(un brach fiu de la design sau features, care vor fi tot locale dupa clonare sau fetch+pull) si dupa ce terminati treaba mergeti pe branch ul parinte  de la voi si face-ti merge cu fiul ,stergeti branch ul fiu dupa ce le-ati merge uit cu design/features si dupa faceti pull request sa-l schimbati pe cel remote de aici. sper ca ajuta https://learngitbranching.js.org/ </br>
+ Ce va recomand e sa lucrati pe un brach local la voi pe calculator(un brach fiu de la design sau features, care vor fi tot locale dupa clonare sau fetch+pull) si dupa ce terminati treaba mergeti pe branch ul parinte  de la voi si face-ti merge cu fiul ,stergeti branch ul fiu dupa ce le-ati merge uit cu design/features si dupa faceti pull request sa le faceti update si la astea de aici.</br> sper ca ajuta https://learngitbranching.js.org/ </br>
  De fiecare data cand va apucati sa lucrati pe proiect dati in repo ul local fetch origin si pull origin
  </br></br>
 
