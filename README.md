@@ -9,4 +9,6 @@
  Ce are proiectul acum: Ferestra de "Sign in" cu date hardcodate.(username:user, pass:1234)</br>
  In branch ul "Design" se vor face schimbari grafice si de cum va arata aplicatia client.(puteti face va faceti clase pt custum UI/componente ceva de genu asta https://www.youtube.com/watch?v=iLQYwqbHjJQ)</br>
  In branch ul "Features" vom lucra la aplicatie.(codam #cabaietiisicafetele)</br></br>
- Ce recomand e sa va faceti branch ul vostru in design si/sau in features si dupa ce terminati un task sa faceti pull request si sa-l sa facem merge cu brach ul mare.
+ Ce recomand e sa va faceti branch ul vostru in design si/sau in features si dupa ce terminati un task sa faceti pull request si sa-l sa facem merge cu brach ul mare.</br>
+ 
+ Puteti scrie si aici ca sa anuntati ce ati facut :)
