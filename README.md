@@ -4,7 +4,7 @@
  Step 2: Dupa ce intrati in aplicatie, alegeti-va un folder si faceti clone la repository-ul asta  https://github.com/AdrianH20/ReserveEat.git</br>
  In prima faza toate commiturile si toate branchurile create se vor salva pe reposity ul local clonat mentionat anterior</br>
  Ce va recomand e sa lucrati pe un brach local la voi pe calculator si dupa ce terminati sa faceti merge la branch 'design' 'features' de la voi, sa stergeti branch ul/branch urile merge uite si dupa sa faceti pull request sa-l schimbati pe cel remote de aici. sper ca ajuta https://learngitbranching.js.org/ </br>
- De fiecare data cand va apucati sa lucrati pe proiect dati in repo ul local pull origins
+ De fiecare data cand va apucati sa lucrati pe proiect dati in repo ul local fetch origin si pull origin
  </br></br>
 
  Ce are proiectul acum: Ferestra de "Sign in" cu date hardcodate.(username:user, pass:1234)</br>
