@@ -1,9 +1,9 @@
 # ReserveEat
  Setup !</br>
  Step 1: Descarcati GitHub Desktop</br>
- Step 2: Dupa ce intrati in aplicatie, alegetiva un folder si da ti clone repository-ul asta la https://github.com/AdrianH20/ReserveEat.git</br>
+ Step 2: Dupa ce intrati in aplicatie, alegeti-va un folder si faceti clone repository-ul asta la https://github.com/AdrianH20/ReserveEat.git</br>
  In prima faza toate commiturile si toate branchurile create create se vor salva pe reposity ul local clonat mentionat anterior</br>
- Ce va recomand e sa lucrati pe un brach local la voi pe calculator si dupa ce terminati sa faceti merge la branch 'design clonat si dupa sa faceti pull request sa-l schimbati pe cel remote de aici.</br>
+ Ce va recomand e sa lucrati pe un brach local la voi pe calculator si dupa ce terminati sa faceti merge la branch 'design clonat, sa stergeti branch ul/branch urile sper ca ajuta https://learngitbranching.js.org/ dupa sa faceti pull request sa-l schimbati pe cel remote de aici.</br>
  De fiecare data cand va apucati sa lucrati pe proiect dati in repo ul local pull origins
  </br></br>
 
