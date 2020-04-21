@@ -29,6 +29,7 @@ namespace Client
         private void signInBtn_Click(object sender, EventArgs e)
         {
             if (usernameTextBox.Text == "user" && passwordTextBox.Text == "1234") orderForm.Show();
+            /// adaug un comentariu
         }
     }
 }
