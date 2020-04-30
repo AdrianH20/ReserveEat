@@ -1,0 +1,10 @@
+C:\Users\bombo\source\repos\ReservEatLogin\ReservEatLogin\bin\Debug\ReservEatLogin.exe
+C:\Users\bombo\source\repos\ReservEatLogin\ReservEatLogin\bin\Debug\ReservEatLogin.pdb
+C:\Users\bombo\source\repos\ReservEatLogin\ReservEatLogin\obj\Debug\ReservEatLogin.csprojAssemblyReference.cache
+C:\Users\bombo\source\repos\ReservEatLogin\ReservEatLogin\obj\Debug\ReservEatLogin.Form1.resources
+C:\Users\bombo\source\repos\ReservEatLogin\ReservEatLogin\obj\Debug\ReservEatLogin.Properties.Resources.resources
+C:\Users\bombo\source\repos\ReservEatLogin\ReservEatLogin\obj\Debug\ReservEatLogin.csproj.GenerateResource.cache
+C:\Users\bombo\source\repos\ReservEatLogin\ReservEatLogin\obj\Debug\ReservEatLogin.exe
+C:\Users\bombo\source\repos\ReservEatLogin\ReservEatLogin\obj\Debug\ReservEatLogin.pdb
+C:\Users\bombo\source\repos\ReservEatLogin\ReservEatLogin\obj\Debug\ReservEatLogin.Form2.resources
+C:\Users\bombo\source\repos\ReservEatLogin\ReservEatLogin\obj\Debug\ReservEatLogin.Form3.resources
