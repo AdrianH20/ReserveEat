@@ -7,21 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace ReservEatLogin
+namespace Client
 {
-    public partial class Form3 : Form
+    public partial class HomeForm : Form
     {
-        public Form3()
+        public HomeForm()
         {
             InitializeComponent();
         }
 
-        private void pictureBox7_Click(object sender, EventArgs e)
+        private void HomeForm_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        private void HomeForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
