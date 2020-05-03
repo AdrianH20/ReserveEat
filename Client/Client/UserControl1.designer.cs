@@ -1,4 +1,4 @@
-﻿namespace HomepageFinal
+﻿namespace Client
 {
     partial class UserControl1
     {
@@ -101,7 +101,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::HomepageFinal.Properties.Resources.irish;
+            this.pictureBox1.BackgroundImage = global::Client.Properties.Resources.irish;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
@@ -143,7 +143,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.BackgroundImage = global::HomepageFinal.Properties.Resources.Hugo1463718394;
+            this.pictureBox2.BackgroundImage = global::Client.Properties.Resources.hugo;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
             this.pictureBox2.Name = "pictureBox2";
@@ -185,7 +185,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.BackgroundImage = global::HomepageFinal.Properties.Resources.download;
+            this.pictureBox3.BackgroundImage = global::Client.Properties.Resources.samsara;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox3.Location = new System.Drawing.Point(0, 0);
             this.pictureBox3.Name = "pictureBox3";
@@ -227,7 +227,7 @@
             // 
             // pictureBox4
             // 
-            this.pictureBox4.BackgroundImage = global::HomepageFinal.Properties.Resources.download1;
+            this.pictureBox4.BackgroundImage = global::Client.Properties.Resources.natuu;
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox4.Location = new System.Drawing.Point(0, 0);
             this.pictureBox4.Name = "pictureBox4";
@@ -269,7 +269,7 @@
             // 
             // pictureBox5
             // 
-            this.pictureBox5.BackgroundImage = global::HomepageFinal.Properties.Resources.logo_465x320;
+            this.pictureBox5.BackgroundImage = global::Client.Properties.Resources.roata;
             this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox5.Location = new System.Drawing.Point(0, 0);
             this.pictureBox5.Name = "pictureBox5";
@@ -311,7 +311,7 @@
             // 
             // pictureBox6
             // 
-            this.pictureBox6.BackgroundImage = global::HomepageFinal.Properties.Resources.unnamed;
+            this.pictureBox6.BackgroundImage = global::Client.Properties.Resources.via;
             this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox6.Location = new System.Drawing.Point(0, 0);
             this.pictureBox6.Name = "pictureBox6";
@@ -332,7 +332,6 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.AutoScroll = true;
-            this.AutoScrollMinSize = new System.Drawing.Size(701, 487);
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Transparent;

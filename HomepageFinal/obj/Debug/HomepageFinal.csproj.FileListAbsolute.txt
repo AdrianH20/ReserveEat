@@ -8,3 +8,13 @@ C:\Users\bombo\source\repos\HomepageFinal\obj\Debug\HomepageFinal.csproj.Generat
 C:\Users\bombo\source\repos\HomepageFinal\obj\Debug\HomepageFinal.exe
 C:\Users\bombo\source\repos\HomepageFinal\obj\Debug\HomepageFinal.pdb
 C:\Users\bombo\source\repos\HomepageFinal\obj\Debug\HomepageFinal.UserControl1.resources
+C:\Users\Adrian\Desktop\ReserveEat\HomepageFinal\bin\Debug\HomepageFinal.exe.config
+C:\Users\Adrian\Desktop\ReserveEat\HomepageFinal\bin\Debug\HomepageFinal.exe
+C:\Users\Adrian\Desktop\ReserveEat\HomepageFinal\bin\Debug\HomepageFinal.pdb
+C:\Users\Adrian\Desktop\ReserveEat\HomepageFinal\obj\Debug\HomepageFinal.csprojAssemblyReference.cache
+C:\Users\Adrian\Desktop\ReserveEat\HomepageFinal\obj\Debug\HomepageFinal.Form1.resources
+C:\Users\Adrian\Desktop\ReserveEat\HomepageFinal\obj\Debug\HomepageFinal.Properties.Resources.resources
+C:\Users\Adrian\Desktop\ReserveEat\HomepageFinal\obj\Debug\HomepageFinal.UserControl1.resources
+C:\Users\Adrian\Desktop\ReserveEat\HomepageFinal\obj\Debug\HomepageFinal.csproj.GenerateResource.cache
+C:\Users\Adrian\Desktop\ReserveEat\HomepageFinal\obj\Debug\HomepageFinal.exe
+C:\Users\Adrian\Desktop\ReserveEat\HomepageFinal\obj\Debug\HomepageFinal.pdb
