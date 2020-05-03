@@ -74,6 +74,7 @@ namespace Client
             new HomeForm().Show();
             this.WaiterForm.Close();
             this.Close();
+            new Form2().Show();
 
         }
     }

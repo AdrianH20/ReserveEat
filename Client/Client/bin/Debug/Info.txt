@@ -1,0 +1,10 @@
+ Table 87 42100 100 Bisque 
+Table 44 226100 100 Bisque 
+Bar 151 134100 100 RosyBrown 
+Chair 138 214100 100 RosyBrown 
+Chair 151 263100 100 RosyBrown 
+Chair 74 158100 100 RosyBrown 
+Big Table 300 80100 100 Bisque 
+Stage 301 228100 100 RosyBrown 
+Stage 339 13100 100 RosyBrown 
+
