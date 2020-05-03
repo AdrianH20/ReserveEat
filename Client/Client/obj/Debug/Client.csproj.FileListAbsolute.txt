@@ -7,4 +7,5 @@ C:\Users\Adrian\Desktop\ReserveEat\Client\Client\obj\Debug\Client.exe
 C:\Users\Adrian\Desktop\ReserveEat\Client\Client\obj\Debug\Client.pdb
 C:\Users\Adrian\Desktop\ReserveEat\Client\Client\obj\Debug\Client.UserForm.resources
 C:\Users\Adrian\Desktop\ReserveEat\Client\Client\obj\Debug\Client.WaiterForm.resources
-C:\Users\Adrian\Desktop\ReserveEat\Client\Client\obj\Debug\Client.HomeForm.resources
+C:\Users\Adrian\Desktop\ReserveEat\Client\Client\obj\Debug\Client.Form1.resources
+C:\Users\Adrian\Desktop\ReserveEat\Client\Client\obj\Debug\Client.UserControl1.resources
