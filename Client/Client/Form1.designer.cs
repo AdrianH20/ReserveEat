@@ -1,4 +1,4 @@
-﻿namespace HomepageFinal
+﻿namespace Client
 {
     partial class Form1
     {
@@ -37,7 +37,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.userControl11 = new HomepageFinal.UserControl1();
+            this.userControl11 = new Client.UserControl1();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -65,7 +65,7 @@
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Palatino Linotype", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Image = global::HomepageFinal.Properties.Resources.img_393620;
+            this.button3.Image = global::Client.Properties.Resources.img_393620;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.Location = new System.Drawing.Point(20, 377);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -85,7 +85,7 @@
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Palatino Linotype", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = global::HomepageFinal.Properties.Resources.img_3936203;
+            this.button2.Image = global::Client.Properties.Resources.img_3936203;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.Location = new System.Drawing.Point(20, 297);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -105,7 +105,7 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Palatino Linotype", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::HomepageFinal.Properties.Resources._finally;
+            this.button1.Image = global::Client.Properties.Resources._finally;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(20, 217);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -121,7 +121,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::HomepageFinal.Properties.Resources.c6e37a94_ab08_4c81_b418_ec7b978b5221_200x200;
+            this.pictureBox1.BackgroundImage = global::Client.Properties.Resources.c6e37a94_ab08_4c81_b418_ec7b978b5221_200x200;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(5, 5);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);

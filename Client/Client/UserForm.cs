@@ -71,7 +71,7 @@ namespace Client
 
         private void signInBtn_Click(object sender, EventArgs e)
         {
-            new HomeForm().Show();
+            new Form1().Show();
             this.WaiterForm.Close();
             this.Close();
 
