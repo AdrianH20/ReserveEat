@@ -7,5 +7,9 @@ C:\Users\Adrian\Desktop\ReserveEat\Client\Client\obj\Debug\Client.exe
 C:\Users\Adrian\Desktop\ReserveEat\Client\Client\obj\Debug\Client.pdb
 C:\Users\Adrian\Desktop\ReserveEat\Client\Client\obj\Debug\Client.UserForm.resources
 C:\Users\Adrian\Desktop\ReserveEat\Client\Client\obj\Debug\Client.WaiterForm.resources
-C:\Users\Adrian\Desktop\ReserveEat\Client\Client\obj\Debug\Client.Form1.resources
-C:\Users\Adrian\Desktop\ReserveEat\Client\Client\obj\Debug\Client.UserControl1.resources
+C:\Users\Adrian\Desktop\ReserveEat\Client\Client\obj\Debug\Client.Home.resources
+C:\Users\Adrian\Desktop\ReserveEat\Client\Client\obj\Debug\Client.RestaurantsControl.resources
+C:\Users\Adrian\Desktop\ReserveEat\Client\Client\obj\Debug\Client.Controls.CardViewControl.resources
+C:\Users\Adrian\Desktop\ReserveEat\Client\Client\bin\Debug\Database.mdf
+C:\Users\Adrian\Desktop\ReserveEat\Client\Client\bin\Debug\Database_log.ldf
+C:\Users\Adrian\Desktop\ReserveEat\Client\Client\obj\Debug\Client.Forms.RestaurantForm.resources
