@@ -42,7 +42,7 @@ namespace Client.Controls
 
         private void CardViewControl_Click(object sender, EventArgs e)
         {
-            RestaurantForm restaurantForm= new RestaurantForm(ID, Title.Text);
+            RestaurantForm restaurantForm= new RestaurantForm(ID);
             restaurantForm.Show();
         }
     }

@@ -97,6 +97,8 @@
       <DependentUpon>WaiterForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\CardView.cs" />
+    <Compile Include="Models\RestaurantModel.cs" />
+    <Compile Include="Models\ReviewModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Controls\CardViewControl.resx">
