@@ -96,5 +96,19 @@ namespace Client.API
             return restaurantModel;
 
         }
+
+
+        public static void addReview(string contentReview,int author,int restaurant)
+        {
+            SqlConnection connection = new SqlConnection(connectionString);
+            connection.Open();
+            //INSERT INTO table_name (column1, column2, column3, ...)
+            //VALUES(value1, value2, value3, ...);
+            string query = @"INSERT INTO Reviews (Content, Author, Restaurant) VALUES('"+contentReview+@"', '" +author.ToString()+@"', '"+restaurant.ToString()+   "')";
+            MessageBox.Show(query);
+            SqlCommand command = new SqlCommand(query, connection);
+            command.ExecuteNonQuery();
+            connection.Close();
+        }
     }
 }

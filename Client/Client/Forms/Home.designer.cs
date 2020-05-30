@@ -59,6 +59,7 @@
             this.NavigationPanel.Name = "NavigationPanel";
             this.NavigationPanel.Size = new System.Drawing.Size(212, 520);
             this.NavigationPanel.TabIndex = 0;
+            this.NavigationPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.NavigationPanel_Paint);
             // 
             // settingsPanel
             // 
@@ -159,7 +160,7 @@
             this.exitBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(161)))), ((int)(((byte)(125)))));
             this.exitBtn.Location = new System.Drawing.Point(675, 5);
             this.exitBtn.Name = "exitBtn";
-            this.exitBtn.Size = new System.Drawing.Size(27, 27);
+            this.exitBtn.Size = new System.Drawing.Size(23, 22);
             this.exitBtn.TabIndex = 2;
             this.exitBtn.Text = "X";
             this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
@@ -194,7 +195,7 @@
             // 
             // Home
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGoldenrodYellow;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;

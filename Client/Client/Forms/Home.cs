@@ -79,5 +79,10 @@ namespace Client
         {
             settingsBtn.BackColor = Color.Transparent;
         }
+
+        private void NavigationPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
