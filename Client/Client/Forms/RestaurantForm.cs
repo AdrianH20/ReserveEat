@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using RestaurantModel = Client.Models.RestaurantModel;
+using RestaurantRatings = Client.Models.RestaurantRatings;
+
 
 
 namespace Client.Forms
@@ -43,6 +45,7 @@ namespace Client.Forms
 
 
             reviewControl1.ID_restaurant = _Id;
+            reviewControl1.ID_user = 1;
             reviewControl1.Panel =reviewsPanel ;
 
             int posY = 50;
@@ -62,7 +65,12 @@ namespace Client.Forms
             }
 
             reviewControl1.getReviewsLabel().Text = nrReviews.ToString();
-           
+
+            RestaurantRatings restaurantRatings = API.SQLDatabase.getRatings(_Id);
+
+            reviewControl1.setRatings(restaurantRatings);
+
+            if (API.SQLDatabase.checkForRating(reviewControl1.ID_restaurant, reviewControl1.ID_user)) reviewControl1.getRatingsPanel().Enabled = false;
             
 
         }

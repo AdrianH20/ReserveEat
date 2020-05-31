@@ -11,6 +11,7 @@ using System.Reflection;
 using System.IO;
 using Client.Models;
 using System.Security.Cryptography;
+using RestaurantRatings = Client.Models.RestaurantRatings;
 
 namespace Client.API
 {
@@ -110,5 +111,70 @@ namespace Client.API
             command.ExecuteNonQuery();
             connection.Close();
         }
+
+        public static RestaurantRatings getRatings(int id)
+        {
+            RestaurantRatings restaurantRatings = new RestaurantRatings();
+
+            SqlConnection connection = new SqlConnection(connectionString);
+            connection.Open();
+
+            string query = "SELECT Rating from Ratings_Restaurant JOIN Restaurants ON (Ratings_Restaurant.Restaurant = Restaurants.RestaurantID) WHERE Restaurants.RestaurantID = '"+id+"'";
+            DataSet dataInfo = new DataSet();
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, connection);
+            sqlDataAdapter.Fill(dataInfo, "info");
+
+            int currentRating = 0;
+
+            foreach(DataRow dr in dataInfo.Tables["info"].Rows)
+            {
+                currentRating = int.Parse(dr.ItemArray.GetValue(0).ToString());
+
+                switch(currentRating)
+                {
+                    case 0: restaurantRatings.Bad++;break;
+                    case 1: restaurantRatings.Average++;break;
+                    case 2: restaurantRatings.VeryGood++;break;
+                    case 3: restaurantRatings.Execellent++;break;
+
+                }
+            }
+            connection.Close();
+            return   restaurantRatings;
+        }
+
+        public static bool checkForRating(int restaurantID, int userID)
+        {
+            bool isRating = false;
+
+            
+            SqlConnection connection = new SqlConnection(connectionString);
+            connection.Open();
+           
+            string query = String.Format("SELECT Rating from Ratings_Restaurant JOIN Restaurants ON (Ratings_Restaurant.Restaurant = Restaurants.RestaurantID) JOIN Clients ON (Ratings_Restaurant.Author = Clients.ClientId) WHERE Restaurants.RestaurantID = '{0}' AND Clients.ClientId ='{1}'",restaurantID,userID);
+            DataSet dataInfo = new DataSet();
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, connection);
+            sqlDataAdapter.Fill(dataInfo, "info");
+
+
+            foreach (DataRow dr in dataInfo.Tables["info"].Rows)  isRating = true; 
+            connection.Close();
+            return isRating;
+        }
+
+        public static void addRating(int restaurantID, int userID, int rating)
+        {
+            SqlConnection connection = new SqlConnection(connectionString);
+            connection.Open();
+            //INSERT INTO table_name(column1, column2, column3, ...)
+            //VALUES(value1, value2, value3, ...);
+            string query = String.Format("INSERT INTO Ratings_Restaurant (Restaurant, Author, Rating) VALUES ('{0}', '{1}', '{2}')", restaurantID, userID, rating);
+            SqlCommand command = new SqlCommand(query, connection);
+            command.ExecuteNonQuery();
+
+            connection.Close();
+
+        }
+
     }
 }

@@ -10,6 +10,8 @@ using System.Windows.Forms;
 
 using ReviewModel = Client.Models.ReviewModel;
 using RestaurantModel = Client.Models.RestaurantModel;
+using RestaurantRatings = Client.Models.RestaurantRatings;
+
 namespace Client.Forms
 {
     public partial class ReviewControl : UserControl
@@ -18,23 +20,24 @@ namespace Client.Forms
     {
 
         public int ID_restaurant = 1;
+        public int ID_user = 1;
         public Panel Panel = null;
 
         int nrofrates = 0;
         int nrofreviews = 0;
-        int nr_excellent = 0;
-        int nr_good = 0;
-        int nr_bad = 0;
-        int nr_average = 0;
+       
     
         public ReviewControl()
         {
+
             InitializeComponent();
         }
         private void ReviewControl_Load(object sender, EventArgs e)
         {
             this.nrreview.Text = Convert.ToString(nrofreviews);
-            this.nrofrt.Text = Convert.ToString(nrofrates);
+            this.nrofratesLabel.Text = Convert.ToString(nrofrates);
+
+            ///if (API.SQLDatabase.checkForRating(ID_restaurant,ID_user)) ratingsPanel.Enabled = false;
             
         }
 
@@ -88,11 +91,10 @@ namespace Client.Forms
         private void CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
             //excelent
-            CheckBox cb = (CheckBox)sender;
-            if (cb.Checked)
-                progressBar1.Value += 1;
-            nr_excellent += 1;
-            nrofrates += 1;
+            ratingsPanel.Enabled = false;
+            API.SQLDatabase.addRating(ID_restaurant, ID_user, 3);
+            RestaurantRatings ratings = API.SQLDatabase.getRatings(ID_restaurant);
+            setRatings(ratings);
 
         }
 
@@ -100,32 +102,29 @@ namespace Client.Forms
         private void Chbox2_CheckedChanged(object sender, EventArgs e)
         {
             //very good
-            CheckBox cb = (CheckBox)sender;
-            if (cb.Checked)
-                progressBar2.Value += 1;
-            nrofrates += 1;
-            nr_good += 1;
+            ratingsPanel.Enabled = false;
+            API.SQLDatabase.addRating(ID_restaurant, ID_user, 2);
+            RestaurantRatings ratings = API.SQLDatabase.getRatings(ID_restaurant);
+            setRatings(ratings);
 
         }
 
         private void CheckBox1_CheckedChanged_1(object sender, EventArgs e)
         {
             //average
-            CheckBox cb = (CheckBox)sender;
-            if (cb.Checked)
-                progressBar3.Value += 1;
-            nrofrates += 1;
-            nr_average += 1;
+            ratingsPanel.Enabled = false;
+            API.SQLDatabase.addRating(ID_restaurant, ID_user, 1);
+            RestaurantRatings ratings = API.SQLDatabase.getRatings(ID_restaurant);
+            setRatings(ratings);
         }
 
         private void CheckBox2_CheckedChanged(object sender, EventArgs e)
         {
             //bad
-            CheckBox cb = (CheckBox)sender;
-            if (cb.Checked)
-                progressBar4.Value += 1;
-            nrofrates += 1;
-            nr_bad += 1;
+            ratingsPanel.Enabled = false;
+            API.SQLDatabase.addRating(ID_restaurant, ID_user, 0);
+            RestaurantRatings ratings = API.SQLDatabase.getRatings(ID_restaurant);
+            setRatings(ratings);
         }
 
         private void Label5_Click(object sender, EventArgs e)
@@ -141,6 +140,26 @@ namespace Client.Forms
         public Label getReviewsLabel()
         {
             return nrreview;
+        }
+        public void setRatings(RestaurantRatings restaurantRatings)
+        {
+            excellentLabel.Text = restaurantRatings.Execellent.ToString();
+            VeryGoodLabel.Text = restaurantRatings.VeryGood.ToString();
+            AverageLabel.Text = restaurantRatings.Average.ToString();
+            BadLabel.Text = restaurantRatings.Bad.ToString();
+
+            excProgressB.Value = restaurantRatings.Execellent;
+            verygoodProgressBar.Value = restaurantRatings.VeryGood;
+            averageProgressBar.Value = restaurantRatings.Average;
+            badProgressBar.Value = restaurantRatings.Bad;
+
+            nrofratesLabel.Text = (restaurantRatings.Execellent + restaurantRatings.VeryGood + restaurantRatings.Average + restaurantRatings.Bad).ToString();
+
+        }
+
+        public Panel getRatingsPanel()
+        {
+            return ratingsPanel;
         }
     }
 }

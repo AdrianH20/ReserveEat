@@ -36,22 +36,22 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.progressBar2 = new System.Windows.Forms.ProgressBar();
-            this.progressBar3 = new System.Windows.Forms.ProgressBar();
-            this.progressBar4 = new System.Windows.Forms.ProgressBar();
+            this.excProgressB = new System.Windows.Forms.ProgressBar();
+            this.verygoodProgressBar = new System.Windows.Forms.ProgressBar();
+            this.averageProgressBar = new System.Windows.Forms.ProgressBar();
+            this.badProgressBar = new System.Windows.Forms.ProgressBar();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.informationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nrofrt = new System.Windows.Forms.Label();
-            this.nr1 = new System.Windows.Forms.Label();
-            this.nr2 = new System.Windows.Forms.Label();
-            this.nr3 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.nrofratesLabel = new System.Windows.Forms.Label();
+            this.excellentLabel = new System.Windows.Forms.Label();
+            this.VeryGoodLabel = new System.Windows.Forms.Label();
+            this.AverageLabel = new System.Windows.Forms.Label();
+            this.BadLabel = new System.Windows.Forms.Label();
+            this.ratingsPanel = new System.Windows.Forms.Panel();
             this.contextMenuStrip1.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.ratingsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -128,36 +128,36 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
-            // progressBar1
+            // excProgressB
             // 
-            this.progressBar1.ForeColor = System.Drawing.Color.Black;
-            this.progressBar1.Location = new System.Drawing.Point(110, 88);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(170, 23);
-            this.progressBar1.TabIndex = 23;
+            this.excProgressB.ForeColor = System.Drawing.Color.Black;
+            this.excProgressB.Location = new System.Drawing.Point(110, 88);
+            this.excProgressB.Name = "excProgressB";
+            this.excProgressB.Size = new System.Drawing.Size(170, 23);
+            this.excProgressB.TabIndex = 23;
             // 
-            // progressBar2
+            // verygoodProgressBar
             // 
-            this.progressBar2.ForeColor = System.Drawing.Color.Black;
-            this.progressBar2.Location = new System.Drawing.Point(110, 126);
-            this.progressBar2.Name = "progressBar2";
-            this.progressBar2.Size = new System.Drawing.Size(170, 23);
-            this.progressBar2.TabIndex = 24;
+            this.verygoodProgressBar.ForeColor = System.Drawing.Color.Black;
+            this.verygoodProgressBar.Location = new System.Drawing.Point(110, 126);
+            this.verygoodProgressBar.Name = "verygoodProgressBar";
+            this.verygoodProgressBar.Size = new System.Drawing.Size(170, 23);
+            this.verygoodProgressBar.TabIndex = 24;
             // 
-            // progressBar3
+            // averageProgressBar
             // 
-            this.progressBar3.ForeColor = System.Drawing.Color.Black;
-            this.progressBar3.Location = new System.Drawing.Point(110, 162);
-            this.progressBar3.Name = "progressBar3";
-            this.progressBar3.Size = new System.Drawing.Size(170, 23);
-            this.progressBar3.TabIndex = 25;
+            this.averageProgressBar.ForeColor = System.Drawing.Color.Black;
+            this.averageProgressBar.Location = new System.Drawing.Point(110, 162);
+            this.averageProgressBar.Name = "averageProgressBar";
+            this.averageProgressBar.Size = new System.Drawing.Size(170, 23);
+            this.averageProgressBar.TabIndex = 25;
             // 
-            // progressBar4
+            // badProgressBar
             // 
-            this.progressBar4.Location = new System.Drawing.Point(110, 200);
-            this.progressBar4.Name = "progressBar4";
-            this.progressBar4.Size = new System.Drawing.Size(170, 26);
-            this.progressBar4.TabIndex = 26;
+            this.badProgressBar.Location = new System.Drawing.Point(110, 200);
+            this.badProgressBar.Name = "badProgressBar";
+            this.badProgressBar.Size = new System.Drawing.Size(170, 26);
+            this.badProgressBar.TabIndex = 26;
             // 
             // label2
             // 
@@ -195,79 +195,79 @@
             this.informationToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.informationToolStripMenuItem.Text = "information";
             // 
-            // nrofrt
+            // nrofratesLabel
             // 
-            this.nrofrt.AutoSize = true;
-            this.nrofrt.Location = new System.Drawing.Point(308, 58);
-            this.nrofrt.Name = "nrofrt";
-            this.nrofrt.Size = new System.Drawing.Size(48, 13);
-            this.nrofrt.TabIndex = 31;
-            this.nrofrt.Text = "nrofrates";
+            this.nrofratesLabel.AutoSize = true;
+            this.nrofratesLabel.Location = new System.Drawing.Point(308, 58);
+            this.nrofratesLabel.Name = "nrofratesLabel";
+            this.nrofratesLabel.Size = new System.Drawing.Size(48, 13);
+            this.nrofratesLabel.TabIndex = 31;
+            this.nrofratesLabel.Text = "nrofrates";
             // 
-            // nr1
+            // excellentLabel
             // 
-            this.nr1.AutoSize = true;
-            this.nr1.Location = new System.Drawing.Point(292, 94);
-            this.nr1.Name = "nr1";
-            this.nr1.Size = new System.Drawing.Size(22, 13);
-            this.nr1.TabIndex = 32;
-            this.nr1.Text = "nr1";
+            this.excellentLabel.AutoSize = true;
+            this.excellentLabel.Location = new System.Drawing.Point(292, 94);
+            this.excellentLabel.Name = "excellentLabel";
+            this.excellentLabel.Size = new System.Drawing.Size(22, 13);
+            this.excellentLabel.TabIndex = 32;
+            this.excellentLabel.Text = "nr1";
             // 
-            // nr2
+            // VeryGoodLabel
             // 
-            this.nr2.AutoSize = true;
-            this.nr2.Location = new System.Drawing.Point(291, 132);
-            this.nr2.Name = "nr2";
-            this.nr2.Size = new System.Drawing.Size(22, 13);
-            this.nr2.TabIndex = 33;
-            this.nr2.Text = "nr2";
+            this.VeryGoodLabel.AutoSize = true;
+            this.VeryGoodLabel.Location = new System.Drawing.Point(291, 132);
+            this.VeryGoodLabel.Name = "VeryGoodLabel";
+            this.VeryGoodLabel.Size = new System.Drawing.Size(22, 13);
+            this.VeryGoodLabel.TabIndex = 33;
+            this.VeryGoodLabel.Text = "nr2";
             // 
-            // nr3
+            // AverageLabel
             // 
-            this.nr3.AutoSize = true;
-            this.nr3.Location = new System.Drawing.Point(291, 172);
-            this.nr3.Name = "nr3";
-            this.nr3.Size = new System.Drawing.Size(22, 13);
-            this.nr3.TabIndex = 34;
-            this.nr3.Text = "nr3";
-            this.nr3.Click += new System.EventHandler(this.Label5_Click);
+            this.AverageLabel.AutoSize = true;
+            this.AverageLabel.Location = new System.Drawing.Point(291, 172);
+            this.AverageLabel.Name = "AverageLabel";
+            this.AverageLabel.Size = new System.Drawing.Size(22, 13);
+            this.AverageLabel.TabIndex = 34;
+            this.AverageLabel.Text = "nr3";
+            this.AverageLabel.Click += new System.EventHandler(this.Label5_Click);
             // 
-            // label6
+            // BadLabel
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(291, 216);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(22, 13);
-            this.label6.TabIndex = 35;
-            this.label6.Text = "nr4";
+            this.BadLabel.AutoSize = true;
+            this.BadLabel.Location = new System.Drawing.Point(291, 216);
+            this.BadLabel.Name = "BadLabel";
+            this.BadLabel.Size = new System.Drawing.Size(22, 13);
+            this.BadLabel.TabIndex = 35;
+            this.BadLabel.Text = "nr4";
             // 
-            // panel1
+            // ratingsPanel
             // 
-            this.panel1.Controls.Add(this.chbox1);
-            this.panel1.Controls.Add(this.chbox2);
-            this.panel1.Controls.Add(this.checkBox1);
-            this.panel1.Controls.Add(this.checkBox2);
-            this.panel1.Location = new System.Drawing.Point(9, 88);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(95, 145);
-            this.panel1.TabIndex = 36;
+            this.ratingsPanel.Controls.Add(this.chbox1);
+            this.ratingsPanel.Controls.Add(this.chbox2);
+            this.ratingsPanel.Controls.Add(this.checkBox1);
+            this.ratingsPanel.Controls.Add(this.checkBox2);
+            this.ratingsPanel.Location = new System.Drawing.Point(9, 88);
+            this.ratingsPanel.Name = "ratingsPanel";
+            this.ratingsPanel.Size = new System.Drawing.Size(95, 145);
+            this.ratingsPanel.TabIndex = 36;
             // 
             // ReviewControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.nr3);
-            this.Controls.Add(this.nr2);
-            this.Controls.Add(this.nr1);
-            this.Controls.Add(this.nrofrt);
+            this.Controls.Add(this.ratingsPanel);
+            this.Controls.Add(this.BadLabel);
+            this.Controls.Add(this.AverageLabel);
+            this.Controls.Add(this.VeryGoodLabel);
+            this.Controls.Add(this.excellentLabel);
+            this.Controls.Add(this.nrofratesLabel);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.progressBar4);
-            this.Controls.Add(this.progressBar3);
-            this.Controls.Add(this.progressBar2);
-            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.badProgressBar);
+            this.Controls.Add(this.averageProgressBar);
+            this.Controls.Add(this.verygoodProgressBar);
+            this.Controls.Add(this.excProgressB);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.nrreview);
             this.Controls.Add(this.label1);
@@ -275,8 +275,8 @@
             this.Size = new System.Drawing.Size(401, 472);
             this.Load += new System.EventHandler(this.ReviewControl_Load);
             this.contextMenuStrip1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.ratingsPanel.ResumeLayout(false);
+            this.ratingsPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -291,19 +291,19 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.ProgressBar progressBar2;
-        private System.Windows.Forms.ProgressBar progressBar3;
-        private System.Windows.Forms.ProgressBar progressBar4;
+        private System.Windows.Forms.ProgressBar excProgressB;
+        private System.Windows.Forms.ProgressBar verygoodProgressBar;
+        private System.Windows.Forms.ProgressBar averageProgressBar;
+        private System.Windows.Forms.ProgressBar badProgressBar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem informationToolStripMenuItem;
-        private System.Windows.Forms.Label nrofrt;
-        private System.Windows.Forms.Label nr1;
-        private System.Windows.Forms.Label nr2;
-        private System.Windows.Forms.Label nr3;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label nrofratesLabel;
+        private System.Windows.Forms.Label excellentLabel;
+        private System.Windows.Forms.Label VeryGoodLabel;
+        private System.Windows.Forms.Label AverageLabel;
+        private System.Windows.Forms.Label BadLabel;
+        private System.Windows.Forms.Panel ratingsPanel;
     }
 }
