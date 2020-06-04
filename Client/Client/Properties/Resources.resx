@@ -187,4 +187,22 @@
   <data name="_finally" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\finally.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="diavola" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\diavola.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hugo_burger" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hugo_burger.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hugo_fructe_de_padure" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hugo_fructe_de_padure.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hugo_oua" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hugo_oua.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hugo_rosii" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hugo_rosii.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="quesadilla" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\quesadilla.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

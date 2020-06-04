@@ -21,13 +21,15 @@ namespace Client.Controls
         public Label RestaurantName { get { return this.Title;} }
         public Label Adresss { get { return this.Address;} }
 
+        public int client_id;
             
         public CardViewControl()
         {
             InitializeComponent();
+            
         }
 
-        public void  SetCardViewControler(CardView cardView)
+        public void  SetCardViewControler(CardView cardView, int client_id)
         {
            LogoRestaurant.Image = Image.FromFile(cardView.Path);
            LogoRestaurant.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -38,11 +40,12 @@ namespace Client.Controls
            Title.Text = cardView.Name;
            Address.Text = cardView.Address;
 
+            this.client_id = client_id;
         }
 
         private void CardViewControl_Click(object sender, EventArgs e)
         {
-            RestaurantForm restaurantForm= new RestaurantForm(ID);
+            RestaurantForm restaurantForm= new RestaurantForm(ID, client_id);
             restaurantForm.Show();
         }
     }

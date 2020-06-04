@@ -62,7 +62,7 @@ namespace Client
 
         private void signInBtn_Click(object sender, EventArgs e)
         {
-            new Home().Show();
+            new Home(1).Show();
             UserForm.Close();
             this.Close();
         }

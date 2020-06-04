@@ -57,14 +57,14 @@ namespace Client.Forms
             else
             {
                 string contentReview = textBox1.Text;
-                int author = 1;
+                int author = ID_user;
                 API.SQLDatabase.addReview(contentReview, author, ID_restaurant);
                 Panel.Controls.Clear();
 
                 RestaurantModel restaurantModel = API.SQLDatabase.GetRestaurant(ID_restaurant);
 
                 List<ReviewModel> reviews = restaurantModel.reviews;
-                int posY = 30;
+                int posY = 0;
 
 
                 int nrReviews = 0;
@@ -75,7 +75,7 @@ namespace Client.Forms
                     Reviews review = new Reviews();
                     review.setInfo(r.Content, r.Author);
                     review.Location = new Point(review.Location.X, posY);
-                    posY += 50;
+                    posY += 100;
 
 
                     nrReviews++;

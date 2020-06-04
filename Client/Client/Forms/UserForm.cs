@@ -71,10 +71,32 @@ namespace Client
 
         private void signInBtn_Click(object sender, EventArgs e)
         {
-            new Home().Show();
-            this.WaiterForm.Close();
-            this.Close();
 
+            int client_id = API.SQLDatabase.signIn(usernameTextBox.Text, passwordTextBox.Text);
+
+            if (client_id != 0)
+            {
+                new Home(client_id).Show();
+                this.WaiterForm.Close();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Failed to login. Recheck the information");
+            }
+
+
+        }
+
+        private void registerBtn_Click(object sender, EventArgs e)
+        {
+            string username = usernameTextBox.Text;
+            string pass = passwordTextBox.Text;
+            string email = emailTextBox.Text;
+            string phone = phoneTextBox.Text;
+            API.SQLDatabase.signUp(username, pass, email, phone);
+
+            MessageBox.Show("The account was created");
         }
     }
 }

@@ -18,9 +18,13 @@ namespace Client
     {
         List<CardViewControl> cardViewControls = new List<CardViewControl>();
         List<CardView> cardViews = new List<CardView>();
+
+        public int client_id;
         public RestaurantsControl()
         {
             InitializeComponent();
+
+           
         }
 
         public void setRestaurants()
@@ -34,7 +38,7 @@ namespace Client
 
                 count++;
                 CardViewControl cardViewControl = new CardViewControl();
-                cardViewControl.SetCardViewControler(cardView);
+                cardViewControl.SetCardViewControler(cardView, client_id);
                 cardViewControl.Location = new Point(posX,posY);
 
                 posX += 200;

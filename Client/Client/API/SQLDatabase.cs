@@ -107,7 +107,7 @@ namespace Client.API
             //INSERT INTO table_name (column1, column2, column3, ...)
             //VALUES(value1, value2, value3, ...);
             string query = @"INSERT INTO Reviews (Content, Author, Restaurant) VALUES('"+contentReview+@"', '" +author.ToString()+@"', '"+restaurant.ToString()+   "')";
-            MessageBox.Show(query);
+           
             SqlCommand command = new SqlCommand(query, connection);
             command.ExecuteNonQuery();
             connection.Close();
@@ -233,9 +233,10 @@ namespace Client.API
                 menu.Ingredients = dataRow.ItemArray.GetValue(3).ToString();
                 menu.Price = int.Parse(dataRow.ItemArray.GetValue(4).ToString());
                 menu.Path = projectDirectory + @"\Resources\" + dataRow.ItemArray.GetValue(5).ToString();
+
                 menu.RestaurantID = int.Parse(dataRow.ItemArray.GetValue(6).ToString());
 
-                MessageBox.Show(menu.ID + " " + menu.Name + " " + menu.Description + " " + menu.Ingredients + " " + menu.Price + " " + menu.Path + " " + menu.RestaurantID + " ");
+               
                 menus.Add(menu);
             }
 

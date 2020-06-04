@@ -12,9 +12,12 @@ namespace Client
 {
     public partial class Home : Form
     {
-        public Home()
+
+        public int client_id;
+        public Home(int client_id)
         {
             InitializeComponent();
+            this.client_id = client_id;
         }
 
         private void reservedBtn_Click(object sender, EventArgs e)
@@ -45,7 +48,9 @@ namespace Client
 
         private void Home_Load(object sender, EventArgs e)
         {
+            restaurantControl.client_id = client_id;
             restaurantControl.setRestaurants();
+            
         }
 
 
