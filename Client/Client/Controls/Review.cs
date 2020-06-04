@@ -28,5 +28,9 @@ namespace Client.Forms
 
         }
 
+        private void Author_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

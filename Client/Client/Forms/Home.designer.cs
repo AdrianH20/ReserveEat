@@ -59,7 +59,6 @@
             this.NavigationPanel.Name = "NavigationPanel";
             this.NavigationPanel.Size = new System.Drawing.Size(212, 520);
             this.NavigationPanel.TabIndex = 0;
-            this.NavigationPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.NavigationPanel_Paint);
             // 
             // settingsPanel
             // 
@@ -172,6 +171,7 @@
             this.popUp.Name = "popUp";
             this.popUp.Size = new System.Drawing.Size(20, 70);
             this.popUp.TabIndex = 2;
+            this.popUp.Paint += new System.Windows.Forms.PaintEventHandler(this.PopUp_Paint);
             // 
             // reservedPanel
             // 

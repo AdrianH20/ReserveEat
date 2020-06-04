@@ -64,7 +64,7 @@ namespace Client.Forms
                 RestaurantModel restaurantModel = API.SQLDatabase.GetRestaurant(ID_restaurant);
 
                 List<ReviewModel> reviews = restaurantModel.reviews;
-                int posY = 50;
+                int posY = 30;
 
 
                 int nrReviews = 0;
@@ -75,7 +75,7 @@ namespace Client.Forms
                     Reviews review = new Reviews();
                     review.setInfo(r.Content, r.Author);
                     review.Location = new Point(review.Location.X, posY);
-                    posY += 70;
+                    posY += 50;
 
 
                     nrReviews++;
@@ -161,5 +161,7 @@ namespace Client.Forms
         {
             return ratingsPanel;
         }
+
+        
     }
 }

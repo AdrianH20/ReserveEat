@@ -11,5 +11,6 @@ namespace Client.Models
         public string Author { get; set; }
         public bool Checked { get; set; }
         public int NrofRates { get; set; }
+      
     }
 }

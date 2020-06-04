@@ -31,6 +31,13 @@ namespace Client.Forms
            
         }
 
+        private void ExitBt_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+            
+        }
+
+
         private void RestaurantForm_Load(object sender, EventArgs e)
         {
 
@@ -48,7 +55,7 @@ namespace Client.Forms
             reviewControl1.ID_user = 1;
             reviewControl1.Panel =reviewsPanel ;
 
-            int posY = 50;
+            int posY = 30;
 
             int nrReviews = 0;
             foreach(ReviewModel  r in  reviews)
@@ -57,7 +64,7 @@ namespace Client.Forms
                 Reviews review = new Reviews();
                 review.setInfo(r.Content, r.Author);
                 review.Location = new Point(review.Location.X, posY);
-                posY += 70;
+                posY += 50;
 
 
                 nrReviews++;
@@ -71,17 +78,29 @@ namespace Client.Forms
             reviewControl1.setRatings(restaurantRatings);
 
             if (API.SQLDatabase.checkForRating(reviewControl1.ID_restaurant, reviewControl1.ID_user)) reviewControl1.getRatingsPanel().Enabled = false;
-            
-
+            Namelabel.Text = _NameRestaurant;
+            Desclabel.Text = _Description;
         }
 
         
-        private void ReviewsPanel_Paint(object sender, PaintEventArgs e)
+
+       
+
+        
+        private void Mapbtn_Click(object sender, EventArgs e)
         {
+            popUp.Location = new Point(0, 208);
+            //view the map
 
         }
 
-        private void ReviewControl1_Load(object sender, EventArgs e)
+        private void Menubtn_Click(object sender, EventArgs e)
+        {
+            popUp.Location = new Point(0, 377);
+            //view the menu
+        }
+
+        private void ExitBt_Click_1(object sender, EventArgs e)
         {
 
         }
