@@ -114,6 +114,7 @@
       <DependentUpon>WaiterForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\CardView.cs" />
+    <Compile Include="Models\MenuModel.cs" />
     <Compile Include="Models\RestaurantModel.cs" />
     <Compile Include="Models\RestaurantRatings.cs" />
     <Compile Include="Models\ReviewModel.cs" />

@@ -47,3 +47,5 @@ C:\Users\emil.ene\Desktop\ReserveEat\Client\Client\obj\Debug\Client.exe
 C:\Users\emil.ene\Desktop\ReserveEat\Client\Client\obj\Debug\Client.pdb
 C:\Users\emil.ene\Desktop\ReserveEat\Client\Client\obj\Debug\Client.Forms.ReviewControl.resources
 C:\Users\emil.ene\Desktop\ReserveEat\Client\Client\obj\Debug\Client.Forms.Reviews.resources
+C:\Users\Adrian\Desktop\ReserveEat\Client\Client\obj\Debug\Client.Forms.ReviewControl.resources
+C:\Users\Adrian\Desktop\ReserveEat\Client\Client\obj\Debug\Client.Forms.Reviews.resources

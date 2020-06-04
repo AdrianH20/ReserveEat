@@ -12,6 +12,7 @@ using System.IO;
 using Client.Models;
 using System.Security.Cryptography;
 using RestaurantRatings = Client.Models.RestaurantRatings;
+using MenuModel = Client.Models.MenuModel;
 
 namespace Client.API
 {
@@ -174,6 +175,72 @@ namespace Client.API
 
             connection.Close();
 
+        }
+
+        public static int signIn(string username, string password)
+        {
+            bool isUser = false;
+            int id = 0;
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+            sqlConnection.Open();
+            DataSet dataInfo = new DataSet();
+            string query = String.Format("SELECT ClientId FROM  Clients WHERE UserName='{0}' AND Password ='{1}'", username, password);
+
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, sqlConnection);
+            sqlDataAdapter.Fill(dataInfo, "info");
+
+            foreach (DataRow dataRow in dataInfo.Tables["info"].Rows) { id = int.Parse(dataRow.ItemArray.GetValue(0).ToString()); isUser = true; }
+
+
+            sqlConnection.Close();
+
+            if (isUser) return id;
+            else return 0;
+
+        }
+
+        public static void signUp(string username, string password, string email, string phone)
+        {
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+            sqlConnection.Open();
+            string query = String.Format("INSERT into Clients(UserName, Password, Email, Phone) VALUES('{0}', '{1}', '{2}', '{3}')", username, password, email, phone);
+            SqlCommand command = new SqlCommand(query, sqlConnection);
+            command.ExecuteNonQuery();
+            sqlConnection.Close();
+
+        }
+
+        public static List<MenuModel> getMenus(int restaurantID)
+        {
+            List<MenuModel> menus = new List<MenuModel>();
+
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+            sqlConnection.Open();
+
+            string query = String.Format("SELECT m.MenuID, m.MenuName, m.Description, m.Ingredients, m.Price, m.PathToLogo, m.Restaurant FROM Menus m  JOIN Restaurants r ON m.Restaurant = r.RestaurantID WHERE r.RestaurantID = '{0}'", restaurantID);
+            DataSet dataInfo = new DataSet();
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, sqlConnection);
+
+            sqlDataAdapter.Fill(dataInfo, "info");
+
+
+            foreach (DataRow dataRow in dataInfo.Tables["info"].Rows)
+            {
+                MenuModel menu = new MenuModel();
+                menu.ID = int.Parse(dataRow.ItemArray.GetValue(0).ToString());
+                menu.Name = dataRow.ItemArray.GetValue(1).ToString();
+                menu.Description = dataRow.ItemArray.GetValue(2).ToString();
+                menu.Ingredients = dataRow.ItemArray.GetValue(3).ToString();
+                menu.Price = int.Parse(dataRow.ItemArray.GetValue(4).ToString());
+                menu.Path = projectDirectory + @"\Resources\" + dataRow.ItemArray.GetValue(5).ToString();
+                menu.RestaurantID = int.Parse(dataRow.ItemArray.GetValue(6).ToString());
+
+                MessageBox.Show(menu.ID + " " + menu.Name + " " + menu.Description + " " + menu.Ingredients + " " + menu.Price + " " + menu.Path + " " + menu.RestaurantID + " ");
+                menus.Add(menu);
+            }
+
+
+            return menus;
         }
 
     }

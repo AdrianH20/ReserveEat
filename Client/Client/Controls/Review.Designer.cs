@@ -43,9 +43,10 @@
             this.ContentLabel.AutoSize = true;
             this.ContentLabel.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
             this.ContentLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(82)))), ((int)(((byte)(139)))));
-            this.ContentLabel.Location = new System.Drawing.Point(3, 0);
+            this.ContentLabel.Location = new System.Drawing.Point(4, 0);
+            this.ContentLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ContentLabel.Name = "ContentLabel";
-            this.ContentLabel.Size = new System.Drawing.Size(51, 14);
+            this.ContentLabel.Size = new System.Drawing.Size(64, 16);
             this.ContentLabel.TabIndex = 0;
             this.ContentLabel.Text = "Content";
             // 
@@ -54,9 +55,10 @@
             this.Author.AutoSize = true;
             this.Author.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Author.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(82)))), ((int)(((byte)(139)))));
-            this.Author.Location = new System.Drawing.Point(3, 0);
+            this.Author.Location = new System.Drawing.Point(4, 0);
+            this.Author.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Author.Name = "Author";
-            this.Author.Size = new System.Drawing.Size(45, 14);
+            this.Author.Size = new System.Drawing.Size(55, 16);
             this.Author.TabIndex = 1;
             this.Author.Text = "Author";
             this.Author.Click += new System.EventHandler(this.Author_Click);
@@ -66,9 +68,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(82)))), ((int)(((byte)(139)))));
-            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Location = new System.Drawing.Point(4, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 18);
+            this.label1.Size = new System.Drawing.Size(80, 22);
             this.label1.TabIndex = 2;
             this.label1.Text = "Author:";
             // 
@@ -77,39 +80,44 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 11F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(82)))), ((int)(((byte)(139)))));
-            this.label2.Location = new System.Drawing.Point(202, 0);
+            this.label2.Location = new System.Drawing.Point(269, 0);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 18);
+            this.label2.Size = new System.Drawing.Size(83, 22);
             this.label2.TabIndex = 3;
             this.label2.Text = "Review:";
             // 
             // panel1
             // 
+            this.panel1.AutoSize = true;
             this.panel1.Controls.Add(this.Author);
-            this.panel1.Location = new System.Drawing.Point(40, 21);
+            this.panel1.Location = new System.Drawing.Point(53, 26);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(162, 115);
+            this.panel1.Size = new System.Drawing.Size(199, 102);
             this.panel1.TabIndex = 4;
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.ContentLabel);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(248, 21);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(331, 26);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(162, 115);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(216, 102);
             this.flowLayoutPanel1.TabIndex = 5;
             // 
             // Reviews
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGoldenrodYellow;
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Reviews";
-            this.Size = new System.Drawing.Size(468, 176);
+            this.Size = new System.Drawing.Size(567, 100);
             this.Load += new System.EventHandler(this.Reviews_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

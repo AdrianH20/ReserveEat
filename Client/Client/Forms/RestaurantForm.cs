@@ -55,7 +55,16 @@ namespace Client.Forms
             reviewControl1.ID_user = 1;
             reviewControl1.Panel =reviewsPanel ;
 
-            int posY = 30;
+
+
+
+            reviewsPanel.HorizontalScroll.Maximum = 0;
+            reviewsPanel.AutoScroll = false;
+            reviewsPanel.VerticalScroll.Visible = false;
+            reviewsPanel.HorizontalScroll.Visible = false;
+            reviewsPanel.AutoScroll = true;
+
+            int posY = 0;
 
             int nrReviews = 0;
             foreach(ReviewModel  r in  reviews)
@@ -64,7 +73,7 @@ namespace Client.Forms
                 Reviews review = new Reviews();
                 review.setInfo(r.Content, r.Author);
                 review.Location = new Point(review.Location.X, posY);
-                posY += 50;
+                posY += 100;
 
 
                 nrReviews++;
@@ -89,7 +98,7 @@ namespace Client.Forms
         
         private void Mapbtn_Click(object sender, EventArgs e)
         {
-            popUp.Location = new Point(0, 208);
+            popUp.Location = new Point(0, 224);
             //view the map
 
         }
@@ -102,7 +111,17 @@ namespace Client.Forms
 
         private void ExitBt_Click_1(object sender, EventArgs e)
         {
+            Application.Exit();
+        }
 
+        private void reviewsPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void reserveBtn_Click(object sender, EventArgs e)
+        {
+            popUp.Location = new Point(0, 300);
         }
     }
 }
