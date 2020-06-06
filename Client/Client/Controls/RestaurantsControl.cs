@@ -49,10 +49,5 @@ namespace Client
             }
 
         }
-
-        private void RestaurantsControl_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

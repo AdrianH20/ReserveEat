@@ -5,14 +5,16 @@ using System.Text;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Data;
-
-using CardView = Client.Models.CardView;
 using System.Reflection;
 using System.IO;
 using Client.Models;
 using System.Security.Cryptography;
+
+
+using CardView = Client.Models.CardView;
 using RestaurantRatings = Client.Models.RestaurantRatings;
 using MenuModel = Client.Models.MenuModel;
+using ClientDetails = Client.Models.ClientDetails;
 
 namespace Client.API
 {
@@ -242,6 +244,46 @@ namespace Client.API
 
 
             return menus;
+        }
+
+
+        public static ClientDetails GetClientDetails(int userID)
+        {
+            ClientDetails clientDetails = new ClientDetails();
+
+
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+            sqlConnection.Open();
+
+            string query = String.Format("SELECT UserName, Password, LastName, FirstName, Phone, Email FROM Clients WHERE ClientId='{0}'", userID);
+            DataSet dataInfo = new DataSet();
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, sqlConnection);
+
+            sqlDataAdapter.Fill(dataInfo, "info");
+
+            foreach (DataRow dataRow in dataInfo.Tables["info"].Rows)
+            {
+                clientDetails.Username = dataRow.ItemArray.GetValue(0).ToString().Trim();
+                clientDetails.Password = dataRow.ItemArray.GetValue(1).ToString().Trim();
+                clientDetails.LastName = dataRow.ItemArray.GetValue(2).ToString().Trim();
+                clientDetails.FirstName = dataRow.ItemArray.GetValue(3).ToString().Trim();
+                clientDetails.Phone = dataRow.ItemArray.GetValue(4).ToString().Trim();
+                clientDetails.Email = dataRow.ItemArray.GetValue(5).ToString().Trim();
+            }
+
+            return clientDetails;
+        }
+
+        public static void updateClient(int userID, string username, string pass, string last, string first, string phone, string email)
+        {
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+            sqlConnection.Open();
+            string query = String.Format("UPDATE Clients SET UserName='{0}', Password='{1}', LastName='{2}', FirstName='{3}', Phone='{4}', Email='{5}' WHERE ClientId='{6}'", username, pass, last, first, phone, email, userID);
+            SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+            sqlCommand.ExecuteNonQuery();
+            sqlConnection.Close();
+
+            MessageBox.Show("All the changes have been successfully updated.");
         }
 
     }

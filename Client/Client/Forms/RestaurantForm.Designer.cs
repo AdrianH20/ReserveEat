@@ -41,7 +41,7 @@
             this.ExitBt = new System.Windows.Forms.Button();
             this.TitlePanel = new System.Windows.Forms.Panel();
             this.Namelabel = new System.Windows.Forms.Label();
-            this.reviewControl1 = new Client.Forms.ReviewControl();
+            this.reviewControl1 = new Client.Forms.ratingsAndReviewsControl();
             this.gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -271,7 +271,7 @@
         private System.Windows.Forms.Panel Locationpanel;
         private System.Windows.Forms.Button Menubtn;
         private System.Windows.Forms.Button aboutBtn;
-        private ReviewControl reviewControl1;
+        private ratingsAndReviewsControl reviewControl1;
         private System.Windows.Forms.Panel popUp;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button reserveBtn;

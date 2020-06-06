@@ -105,6 +105,18 @@
     <Compile Include="Controls\MenuControl.Designer.cs">
       <DependentUpon>MenuControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ReservedControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ReservedControl.Designer.cs">
+      <DependentUpon>ReservedControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SettingsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SettingsControl.Designer.cs">
+      <DependentUpon>SettingsControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,17 +135,17 @@
     <Compile Include="Forms\RestaurantForm.Designer.cs">
       <DependentUpon>RestaurantForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\RatingsAndReviewsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\RatingsAndReviewsControl.Designer.cs">
+      <DependentUpon>RatingsAndReviewsControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ReviewControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\ReviewControl.Designer.cs">
       <DependentUpon>ReviewControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\Review.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\Review.Designer.cs">
-      <DependentUpon>Review.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\UserForm.cs">
       <SubType>Form</SubType>
@@ -148,6 +160,7 @@
       <DependentUpon>WaiterForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\CardView.cs" />
+    <Compile Include="Models\ClientDetails.cs" />
     <Compile Include="Models\MenuModel.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\RestaurantModel.cs" />
@@ -161,6 +174,12 @@
     <EmbeddedResource Include="Controls\MenuControl.resx">
       <DependentUpon>MenuControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ReservedControl.resx">
+      <DependentUpon>ReservedControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SettingsControl.resx">
+      <DependentUpon>SettingsControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
@@ -170,11 +189,11 @@
     <EmbeddedResource Include="Forms\RestaurantForm.resx">
       <DependentUpon>RestaurantForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\RatingsAndReviewsControl.resx">
+      <DependentUpon>RatingsAndReviewsControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\ReviewControl.resx">
       <DependentUpon>ReviewControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Review.resx">
-      <DependentUpon>Review.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UserForm.resx">
       <DependentUpon>UserForm.cs</DependentUpon>

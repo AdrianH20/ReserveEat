@@ -39,7 +39,6 @@
             this.MaximumSize = new System.Drawing.Size(850, 487);
             this.Name = "RestaurantsControl";
             this.Size = new System.Drawing.Size(850, 487);
-            this.Load += new System.EventHandler(this.RestaurantsControl_Load);
             this.ResumeLayout(false);
 
         }

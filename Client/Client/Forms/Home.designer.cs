@@ -38,6 +38,8 @@
             this.exitBtn = new System.Windows.Forms.Label();
             this.popUp = new System.Windows.Forms.Panel();
             this.reservedPanel = new System.Windows.Forms.Panel();
+            this.settingsControl1 = new Client.Controls.SettingsControl();
+            this.reservedControl = new Client.Controls.ReservedControl();
             this.restaurantControl = new Client.RestaurantsControl();
             this.NavigationPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
@@ -159,7 +161,7 @@
             this.exitBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(161)))), ((int)(((byte)(125)))));
             this.exitBtn.Location = new System.Drawing.Point(675, 5);
             this.exitBtn.Name = "exitBtn";
-            this.exitBtn.Size = new System.Drawing.Size(23, 22);
+            this.exitBtn.Size = new System.Drawing.Size(27, 27);
             this.exitBtn.TabIndex = 2;
             this.exitBtn.Text = "X";
             this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
@@ -176,11 +178,36 @@
             // reservedPanel
             // 
             this.reservedPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.reservedPanel.Controls.Add(this.settingsControl1);
+            this.reservedPanel.Controls.Add(this.reservedControl);
             this.reservedPanel.Controls.Add(this.restaurantControl);
             this.reservedPanel.Location = new System.Drawing.Point(212, 35);
             this.reservedPanel.Name = "reservedPanel";
             this.reservedPanel.Size = new System.Drawing.Size(701, 487);
             this.reservedPanel.TabIndex = 0;
+            this.reservedPanel.TabStop = true;
+            this.reservedPanel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.reservedPanel_MouseClick);
+            // 
+            // settingsControl1
+            // 
+            this.settingsControl1.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.settingsControl1.Location = new System.Drawing.Point(0, 0);
+            this.settingsControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.settingsControl1.Name = "settingsControl1";
+            this.settingsControl1.Size = new System.Drawing.Size(701, 487);
+            this.settingsControl1.TabIndex = 3;
+            // 
+            // reservedControl
+            // 
+            this.reservedControl.AutoSize = true;
+            this.reservedControl.BackColor = System.Drawing.Color.LightGoldenrodYellow;
+            this.reservedControl.Enabled = false;
+            this.reservedControl.Location = new System.Drawing.Point(0, 0);
+            this.reservedControl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.reservedControl.Name = "reservedControl";
+            this.reservedControl.Size = new System.Drawing.Size(701, 487);
+            this.reservedControl.TabIndex = 0;
+            this.reservedControl.Visible = false;
             // 
             // restaurantControl
             // 
@@ -191,11 +218,11 @@
             this.restaurantControl.MaximumSize = new System.Drawing.Size(850, 487);
             this.restaurantControl.Name = "restaurantControl";
             this.restaurantControl.Size = new System.Drawing.Size(701, 487);
-            this.restaurantControl.TabIndex = 0;
+            this.restaurantControl.TabIndex = 2;
             // 
             // Home
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGoldenrodYellow;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -235,6 +262,8 @@
         private System.Windows.Forms.Panel reservedPanel;
         private RestaurantsControl restaurantControl;
         private System.Windows.Forms.Panel settingsPanel;
+        private Controls.ReservedControl reservedControl;
+        private Controls.SettingsControl settingsControl1;
     }
 }
 

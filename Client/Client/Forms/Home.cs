@@ -8,6 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+using ReservedControl = Client.Controls.ReservedControl;
+using ClientDetails = Client.Models.ClientDetails;
+
 namespace Client
 {
     public partial class Home : Form
@@ -24,6 +28,15 @@ namespace Client
         {
             popUp.Location = new Point(0, 297);
             restaurantControl.Visible = false;
+            restaurantControl.Enabled = false;
+            settingsControl1.Visible = false;
+            settingsControl1.Enabled = false;
+            
+
+           
+            reservedControl.Enabled = true;
+            reservedControl.Visible = true;
+            
             
         }
 
@@ -35,22 +48,48 @@ namespace Client
         {
             popUp.Location = new Point(0, 377);
             restaurantControl.Visible = false;
-            
+            restaurantControl.Enabled = false;
+            reservedControl.Enabled = false;
+            reservedControl.Visible = false;
+
+            settingsControl1.Enabled = true;
+            settingsControl1.Visible = true;
+
 
         }
 
         private void reserveBtn_Click(object sender, EventArgs e)
         {
             popUp.Location = new Point(0, 217);
+
+            reservedControl.Enabled = false;
+            reservedControl.Visible = false;
+            settingsControl1.Enabled = false;
+            settingsControl1.Visible = false;
+
             restaurantControl.Visible = true;
+            restaurantControl.Enabled = true;
             
         }
 
         private void Home_Load(object sender, EventArgs e)
         {
             restaurantControl.client_id = client_id;
+            reservedControl.client_id = client_id;
+            settingsControl1.client_id = client_id;
+
+            settingsControl1.setClientDetails();
             restaurantControl.setRestaurants();
-            
+
+            reservedControl.Enabled = false;
+            reservedControl.Visible = false;
+            settingsControl1.Enabled = false;
+            settingsControl1.Visible = false;
+
+            restaurantControl.Visible = true;
+            restaurantControl.Enabled = true;
+
+
         }
 
 
@@ -88,6 +127,11 @@ namespace Client
         private void PopUp_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void reservedPanel_MouseClick(object sender, MouseEventArgs e)
+        {
+            MessageBox.Show("hr");
         }
     }
 }
