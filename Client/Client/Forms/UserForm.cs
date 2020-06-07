@@ -90,13 +90,21 @@ namespace Client
 
         private void registerBtn_Click(object sender, EventArgs e)
         {
-            string username = usernameTextBox.Text;
-            string pass = passwordTextBox.Text;
-            string email = emailTextBox.Text;
-            string phone = phoneTextBox.Text;
-            API.SQLDatabase.signUp(username, pass, email, phone);
 
-            MessageBox.Show("The account was created");
+            if (!(usernameTextBox.Text == "Username" || passwordTextBox.Text == "Password" || emailTextBox.Text == "Email (Neccessary only for registration)" || phoneTextBox.Text == "         Phone(Necessary only for registration)"))
+            {
+                string username = usernameTextBox.Text;
+                string pass = passwordTextBox.Text;
+                string email = emailTextBox.Text;
+                string phone = phoneTextBox.Text;
+                API.SQLDatabase.signUp(username, pass, email, phone);
+
+                MessageBox.Show("The account was created");
+            }
+            else
+            {
+                MessageBox.Show("Please complete all fields !");
+            }
         }
     }
 }

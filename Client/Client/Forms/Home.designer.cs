@@ -30,21 +30,21 @@
         {
             this.NavigationPanel = new System.Windows.Forms.Panel();
             this.settingsPanel = new System.Windows.Forms.Panel();
-            this.settingsBtn = new System.Windows.Forms.Button();
-            this.reservedBtn = new System.Windows.Forms.Button();
-            this.reserveBtn = new System.Windows.Forms.Button();
-            this.logoPictureBox = new System.Windows.Forms.PictureBox();
             this.NavigationBar = new System.Windows.Forms.Panel();
             this.exitBtn = new System.Windows.Forms.Label();
             this.popUp = new System.Windows.Forms.Panel();
             this.reservedPanel = new System.Windows.Forms.Panel();
+            this.settingsBtn = new System.Windows.Forms.Button();
+            this.reservedBtn = new System.Windows.Forms.Button();
+            this.reserveBtn = new System.Windows.Forms.Button();
+            this.logoPictureBox = new System.Windows.Forms.PictureBox();
             this.settingsControl1 = new Client.Controls.SettingsControl();
             this.reservedControl = new Client.Controls.ReservedControl();
             this.restaurantControl = new Client.RestaurantsControl();
             this.NavigationPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             this.NavigationBar.SuspendLayout();
             this.reservedPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // NavigationPanel
@@ -70,6 +70,52 @@
             this.settingsPanel.Name = "settingsPanel";
             this.settingsPanel.Size = new System.Drawing.Size(701, 487);
             this.settingsPanel.TabIndex = 0;
+            // 
+            // NavigationBar
+            // 
+            this.NavigationBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.NavigationBar.Controls.Add(this.exitBtn);
+            this.NavigationBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.NavigationBar.Location = new System.Drawing.Point(212, 0);
+            this.NavigationBar.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.NavigationBar.Name = "NavigationBar";
+            this.NavigationBar.Size = new System.Drawing.Size(701, 35);
+            this.NavigationBar.TabIndex = 1;
+            // 
+            // exitBtn
+            // 
+            this.exitBtn.AutoSize = true;
+            this.exitBtn.BackColor = System.Drawing.Color.Transparent;
+            this.exitBtn.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(161)))), ((int)(((byte)(125)))));
+            this.exitBtn.Location = new System.Drawing.Point(675, 5);
+            this.exitBtn.Name = "exitBtn";
+            this.exitBtn.Size = new System.Drawing.Size(27, 27);
+            this.exitBtn.TabIndex = 2;
+            this.exitBtn.Text = "X";
+            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
+            // 
+            // popUp
+            // 
+            this.popUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(161)))), ((int)(((byte)(125)))));
+            this.popUp.Location = new System.Drawing.Point(0, 217);
+            this.popUp.Name = "popUp";
+            this.popUp.Size = new System.Drawing.Size(20, 70);
+            this.popUp.TabIndex = 2;
+            this.popUp.Paint += new System.Windows.Forms.PaintEventHandler(this.PopUp_Paint);
+            // 
+            // reservedPanel
+            // 
+            this.reservedPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.reservedPanel.Controls.Add(this.settingsControl1);
+            this.reservedPanel.Controls.Add(this.reservedControl);
+            this.reservedPanel.Controls.Add(this.restaurantControl);
+            this.reservedPanel.Location = new System.Drawing.Point(212, 35);
+            this.reservedPanel.Name = "reservedPanel";
+            this.reservedPanel.Size = new System.Drawing.Size(701, 487);
+            this.reservedPanel.TabIndex = 0;
+            this.reservedPanel.TabStop = true;
+            this.reservedPanel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.reservedPanel_MouseClick);
             // 
             // settingsBtn
             // 
@@ -142,66 +188,23 @@
             this.logoPictureBox.TabIndex = 0;
             this.logoPictureBox.TabStop = false;
             // 
-            // NavigationBar
-            // 
-            this.NavigationBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
-            this.NavigationBar.Controls.Add(this.exitBtn);
-            this.NavigationBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.NavigationBar.Location = new System.Drawing.Point(212, 0);
-            this.NavigationBar.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.NavigationBar.Name = "NavigationBar";
-            this.NavigationBar.Size = new System.Drawing.Size(701, 35);
-            this.NavigationBar.TabIndex = 1;
-            // 
-            // exitBtn
-            // 
-            this.exitBtn.AutoSize = true;
-            this.exitBtn.BackColor = System.Drawing.Color.Transparent;
-            this.exitBtn.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(161)))), ((int)(((byte)(125)))));
-            this.exitBtn.Location = new System.Drawing.Point(675, 5);
-            this.exitBtn.Name = "exitBtn";
-            this.exitBtn.Size = new System.Drawing.Size(27, 27);
-            this.exitBtn.TabIndex = 2;
-            this.exitBtn.Text = "X";
-            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
-            // 
-            // popUp
-            // 
-            this.popUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(161)))), ((int)(((byte)(125)))));
-            this.popUp.Location = new System.Drawing.Point(0, 217);
-            this.popUp.Name = "popUp";
-            this.popUp.Size = new System.Drawing.Size(20, 70);
-            this.popUp.TabIndex = 2;
-            this.popUp.Paint += new System.Windows.Forms.PaintEventHandler(this.PopUp_Paint);
-            // 
-            // reservedPanel
-            // 
-            this.reservedPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.reservedPanel.Controls.Add(this.settingsControl1);
-            this.reservedPanel.Controls.Add(this.reservedControl);
-            this.reservedPanel.Controls.Add(this.restaurantControl);
-            this.reservedPanel.Location = new System.Drawing.Point(212, 35);
-            this.reservedPanel.Name = "reservedPanel";
-            this.reservedPanel.Size = new System.Drawing.Size(701, 487);
-            this.reservedPanel.TabIndex = 0;
-            this.reservedPanel.TabStop = true;
-            this.reservedPanel.MouseClick += new System.Windows.Forms.MouseEventHandler(this.reservedPanel_MouseClick);
-            // 
             // settingsControl1
             // 
+            this.settingsControl1.AutoSize = true;
             this.settingsControl1.BackColor = System.Drawing.Color.LightGoldenrodYellow;
             this.settingsControl1.Location = new System.Drawing.Point(0, 0);
             this.settingsControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.settingsControl1.Name = "settingsControl1";
-            this.settingsControl1.Size = new System.Drawing.Size(701, 487);
+            this.settingsControl1.Size = new System.Drawing.Size(717, 569);
             this.settingsControl1.TabIndex = 3;
             // 
             // reservedControl
             // 
+            this.reservedControl.AutoScroll = true;
+            this.reservedControl.AutoScrollMargin = new System.Drawing.Size(701, 487);
             this.reservedControl.AutoSize = true;
             this.reservedControl.BackColor = System.Drawing.Color.LightGoldenrodYellow;
-            this.reservedControl.Enabled = false;
+            this.reservedControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.reservedControl.Location = new System.Drawing.Point(0, 0);
             this.reservedControl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.reservedControl.Name = "reservedControl";
@@ -240,11 +243,11 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Home_Load);
             this.NavigationPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
             this.NavigationBar.ResumeLayout(false);
             this.NavigationBar.PerformLayout();
             this.reservedPanel.ResumeLayout(false);
             this.reservedPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }

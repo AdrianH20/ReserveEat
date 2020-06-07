@@ -163,7 +163,8 @@ namespace Client.Forms
 
         private void ExitBt_Click_1(object sender, EventArgs e)
         {
-            Application.Exit();
+            //Application.Exit();
+            this.Close();
         }
 
         private void reviewsPanel_Paint(object sender, PaintEventArgs e)
@@ -308,6 +309,8 @@ namespace Client.Forms
                 int totalPrice = getOrdersTotalPrice(orders);
                 API.SQLDatabase.makeReservation(restaurantID, clientID, dateTimePicker1.Value, DateTime.Parse(startHourComboBox.SelectedItem.ToString()), DateTime.Parse(endHourComboBox.SelectedItem.ToString()), MapObjectID, reservationCode, totalPrice);
                 updateMap(mapObjects);
+
+               
 
             }
             else MessageBox.Show("Please select a table!");

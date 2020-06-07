@@ -15,6 +15,7 @@ using CardView = Client.Models.CardView;
 using RestaurantRatings = Client.Models.RestaurantRatings;
 using MenuModel = Client.Models.MenuModel;
 using ClientDetails = Client.Models.ClientDetails;
+using ReservationModel = Client.Models.ReservationModel;
 
 
 
@@ -332,7 +333,7 @@ namespace Client.API
                 {
                     bool availability = true;
                     dataSet2 = new DataSet();
-                    string query2 = String.Format("SELECT Day, StartHour, EndHour FROM Reservations JOIN MapObjects ON(Reservations.MapObject = MapObjects.MapObjectID) WHERE Reservations.Restaurant = '{0}' AND Reservations.MapObject = '{1}'",restaurantID,i);
+                    string query2 = String.Format("SELECT Day, StartHour, EndHour FROM Reservations JOIN MapObjects ON(Reservations.MapObject = MapObjects.MapObjectID) WHERE Reservations.Restaurant = '{0}' AND Reservations.MapObject = '{1}'",restaurantID,mapObjects.ElementAt(i).id);
                     sqlDataAdapter2 = new SqlDataAdapter(query2, connectionString);
                     sqlDataAdapter2.Fill(dataSet2, "time");
 
@@ -342,7 +343,7 @@ namespace Client.API
                         DateTime reservationStartHour = DateTime.Parse(dr.ItemArray.GetValue(1).ToString());
                         DateTime reservationEndHour = DateTime.Parse(dr.ItemArray.GetValue(2).ToString());
 
-                        MessageBox.Show(reservationDay + " " + dateTime.Date);
+                        //MessageBox.Show(reservationDay + " " + dateTime.Date);
                         if (reservationDay == dateTime.Date) 
                         {
                             int integerClientStartHour = int.Parse(clientStartHour.Hour.ToString()); 
@@ -358,7 +359,7 @@ namespace Client.API
 
                     }
                     mapObjects.ElementAt(i).availability = availability;
-                    MessageBox.Show(availability.ToString());
+                    //MessageBox.Show(availability.ToString());
                 }
             }
             return mapObjects;
@@ -397,13 +398,97 @@ namespace Client.API
 
             string date = month + '/' + day + '/' + year;
 
-            MessageBox.Show(date);
+           // MessageBox.Show(date);
             string query = String.Format("INSERT INTO Reservations(ReservationCode, Day, StartHour, EndHour, CLient, MapObject, Restaurant, TotalPrice) VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}')",reservationCode,date,startHour.TimeOfDay,endHour.TimeOfDay,clientID,mapObjectID,restaurantID,totalPrice);
             sqlConnection.Open();
             SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
             sqlCommand.ExecuteNonQuery();
 
             sqlConnection.Close();
+        }
+
+        public static void makeOrders(int reservationCode, List<Order> orders)
+        {
+            SqlConnection connection = new SqlConnection(connectionString);
+            string query = string.Format("SELECT ReservationID FROM Reservations WHERE ReservationCode='{0}'", reservationCode);
+            DataSet dataSet = new DataSet();
+            connection.Open();
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+            dataAdapter.Fill(dataSet, "info");
+
+            int reservationID = 0;
+
+            foreach(DataRow dataRow in dataSet.Tables["info"].Rows)
+            {
+                reservationID = int.Parse(dataRow.ItemArray.GetValue(0).ToString());
+            }
+            foreach(Order order in orders)
+            {
+                string query2 = String.Format("INSERT INTO Orders(Menu, Reservation, Quantity) VALUES('{0}', '{1}', '{2}')",order.ID,reservationID,order.Quantity);
+                SqlCommand sqlCommand = new SqlCommand(query2, connection);
+                sqlCommand.ExecuteNonQuery();
+
+            }
+            connection.Close();
+        }
+
+        public static List<ReservationModel> getClientReservations(int clientID)
+        {
+            List<ReservationModel> reservations = new List<ReservationModel>();
+
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+            sqlConnection.Open();
+
+            string query = String.Format("SELECT * FROM Reservations WHERE CLient={0}", clientID);
+
+            DataSet dataSet = new DataSet();
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, sqlConnection);
+            sqlDataAdapter.Fill(dataSet, "info");
+
+            foreach (DataRow dataRow in dataSet.Tables["info"].Rows)
+            {
+                ReservationModel reservation = new ReservationModel();
+
+                reservation.ReservationCode = int.Parse(dataRow.ItemArray.GetValue(1).ToString());
+                
+                DateTime date = DateTime.Parse(dataRow.ItemArray.GetValue(2).ToString());
+                reservation.Day = date.Date.ToString().Substring(0, 10);
+
+
+                DateTime start = DateTime.Parse(dataRow.ItemArray.GetValue(3).ToString());
+                reservation.StatHour = start.TimeOfDay.ToString().Substring(0, 5);
+
+                DateTime end = DateTime.Parse(dataRow.ItemArray.GetValue(4).ToString());
+                reservation.EndHour = end.TimeOfDay.ToString().Substring(0, 5);
+
+
+                string query2 = String.Format("SELECT UserName FROM Clients WHERE ClientId ='{0}'", int.Parse(dataRow.ItemArray.GetValue(5).ToString()));
+
+                DataSet dataSet2 = new DataSet();
+                SqlDataAdapter sqlDataAdapter2 = new SqlDataAdapter(query2, sqlConnection);
+                sqlDataAdapter2.Fill(dataSet2, "client");
+                foreach (DataRow dataRow2 in dataSet2.Tables["client"].Rows) reservation.Client = dataRow2.ItemArray.GetValue(0).ToString();
+
+
+                string query3 = String.Format("SELECT Name FROM Restaurants WHERE RestaurantID ='{0}'", int.Parse(dataRow.ItemArray.GetValue(7).ToString()));
+                DataSet dataSet3 = new DataSet();
+                SqlDataAdapter sqlDataAdapter3 = new SqlDataAdapter(query3, sqlConnection);
+                sqlDataAdapter3.Fill(dataSet3, "restaurant");
+                foreach (DataRow dataRow3 in dataSet3.Tables["restaurant"].Rows) reservation.Restaurant = dataRow3.ItemArray.GetValue(0).ToString();
+               // MessageBox.Show(reservation.Restaurant);
+
+
+                reservation.TotalPrice = int.Parse(dataRow.ItemArray.GetValue(8).ToString());
+
+
+                reservations.Add(reservation);
+              
+            }
+            sqlConnection.Close();
+
+
+            return reservations;
+
         }
 
     }

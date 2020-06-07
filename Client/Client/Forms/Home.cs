@@ -11,11 +11,14 @@ using System.Windows.Forms;
 
 using ReservedControl = Client.Controls.ReservedControl;
 using ClientDetails = Client.Models.ClientDetails;
+using ReservationModel = Client.Models.ReservationModel;
+using ReservationControl = Client.Controls.ReservationControl;
 
 namespace Client
 {
     public partial class Home : Form
     {
+
 
         public int client_id;
         public Home(int client_id)
@@ -36,6 +39,23 @@ namespace Client
            
             reservedControl.Enabled = true;
             reservedControl.Visible = true;
+
+            reservedControl.Controls.Clear();
+
+            List<ReservationModel> reservations = API.SQLDatabase.getClientReservations(client_id);
+
+            int posY = 20;
+            foreach (ReservationModel reservation in reservations)
+            {
+                ReservationControl reservationControl = new ReservationControl();
+                reservationControl.Location = new Point(50, posY);
+
+                reservationControl.setInfo(reservation);
+
+                posY += 160;
+
+                reservedControl.Controls.Add(reservationControl);
+            }
             
             
         }

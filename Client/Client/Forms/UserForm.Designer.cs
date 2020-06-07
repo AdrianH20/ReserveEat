@@ -71,7 +71,7 @@
             this.usernameTextBox.Size = new System.Drawing.Size(296, 23);
             this.usernameTextBox.TabIndex = 2;
             this.usernameTextBox.TabStop = false;
-            this.usernameTextBox.Text = "sicu";
+            this.usernameTextBox.Text = "Username";
             this.usernameTextBox.Click += new System.EventHandler(this.usernameTextBox_Click);
             // 
             // panel3
@@ -97,7 +97,7 @@
             this.passwordTextBox.Size = new System.Drawing.Size(296, 23);
             this.passwordTextBox.TabIndex = 5;
             this.passwordTextBox.TabStop = false;
-            this.passwordTextBox.Text = "1234";
+            this.passwordTextBox.Text = "Password";
             this.passwordTextBox.Click += new System.EventHandler(this.passwordTextBox_Click);
             // 
             // panel1
