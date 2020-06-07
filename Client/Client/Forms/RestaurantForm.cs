@@ -308,9 +308,11 @@ namespace Client.Forms
                 int clientID = client_id;
                 int totalPrice = getOrdersTotalPrice(orders);
                 API.SQLDatabase.makeReservation(restaurantID, clientID, dateTimePicker1.Value, DateTime.Parse(startHourComboBox.SelectedItem.ToString()), DateTime.Parse(endHourComboBox.SelectedItem.ToString()), MapObjectID, reservationCode, totalPrice);
+                mapObjects.Clear();
+                mapObjects = API.SQLDatabase.GetMapObjects(_Id, dateTimePicker1.Value, startHourComboBox.SelectedItem.ToString(), endHourComboBox.SelectedItem.ToString());
                 updateMap(mapObjects);
 
-               
+
 
             }
             else MessageBox.Show("Please select a table!");
