@@ -16,6 +16,8 @@ using RestaurantRatings = Client.Models.RestaurantRatings;
 using MenuModel = Client.Models.MenuModel;
 using ClientDetails = Client.Models.ClientDetails;
 
+
+
 namespace Client.API
 {
     class SQLDatabase
@@ -284,6 +286,124 @@ namespace Client.API
             sqlConnection.Close();
 
             MessageBox.Show("All the changes have been successfully updated.");
+        }
+
+        public static List<MapObject> GetMapObjects(int restaurantID, DateTime dateTime, string startHour, string endHour)
+        {
+            List <MapObject> mapObjects= new List<MapObject>();
+            List<int> listTypes = new List<int>();
+            //Intai luam Id urile tuturor obiectelor care se afla in restaurantul cu id ul = restaurantID
+            string query1 = String.Format("SELECT MapObjectID,Type, X, Y, Width, Height, NoChairs FROM MapObjects JOIN Restaurants ON(Restaurants.RestaurantID = MapObjects.Restaurant) WHERE RestaurantID = '{0}'", restaurantID);
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+            sqlConnection.Open();
+
+            DataSet dataSet = new DataSet();
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query1, sqlConnection);
+            sqlDataAdapter.Fill(dataSet, "id");
+
+            foreach(DataRow dr in dataSet.Tables["id"].Rows)
+            {
+                MapObject mapObject = new MapObject();
+                mapObject.id = int.Parse(dr.ItemArray.GetValue(0).ToString());
+                mapObject.type = int.Parse(dr.ItemArray.GetValue(1).ToString());
+                mapObject.x= int.Parse(dr.ItemArray.GetValue(2).ToString());
+                mapObject.y = int.Parse(dr.ItemArray.GetValue(3).ToString());
+                mapObject.width = int.Parse(dr.ItemArray.GetValue(4).ToString());
+                mapObject.height = int.Parse(dr.ItemArray.GetValue(5).ToString());
+
+                if (dr.ItemArray.GetValue(6).ToString() != "") mapObject.noCh = int.Parse(dr.ItemArray.GetValue(6).ToString());
+                else mapObject.noCh = 0;
+
+                
+                mapObjects.Add(mapObject);
+                listTypes.Add(int.Parse(dr.ItemArray.GetValue(1).ToString()));
+            }
+            DateTime clientStartHour = DateTime.Parse(startHour);
+            DateTime clientEndHour = DateTime.Parse(endHour);
+
+            DataSet dataSet2;
+            SqlDataAdapter sqlDataAdapter2;
+            for(int i = 0; i<listTypes.Count; i++)
+            {
+               
+
+                if(listTypes.ElementAt(i)==1)
+
+                {
+                    bool availability = true;
+                    dataSet2 = new DataSet();
+                    string query2 = String.Format("SELECT Day, StartHour, EndHour FROM Reservations JOIN MapObjects ON(Reservations.MapObject = MapObjects.MapObjectID) WHERE Reservations.Restaurant = '{0}' AND Reservations.MapObject = '{1}'",restaurantID,i);
+                    sqlDataAdapter2 = new SqlDataAdapter(query2, connectionString);
+                    sqlDataAdapter2.Fill(dataSet2, "time");
+
+                    foreach(DataRow dr in dataSet2.Tables["time"].Rows)
+                    {
+                        DateTime reservationDay = DateTime.Parse( dr.ItemArray.GetValue(0).ToString());
+                        DateTime reservationStartHour = DateTime.Parse(dr.ItemArray.GetValue(1).ToString());
+                        DateTime reservationEndHour = DateTime.Parse(dr.ItemArray.GetValue(2).ToString());
+
+                        MessageBox.Show(reservationDay + " " + dateTime.Date);
+                        if (reservationDay == dateTime.Date) 
+                        {
+                            int integerClientStartHour = int.Parse(clientStartHour.Hour.ToString()); 
+                            int integerClientEndHour = int.Parse(clientEndHour.Hour.ToString()); 
+
+                            int integerStart = int.Parse(reservationStartHour.Hour.ToString());
+                            int integerEnd = int.Parse(reservationEndHour.Hour.ToString());
+
+                            if ((integerClientStartHour > integerStart || integerClientEndHour > integerStart) && (integerClientStartHour < integerEnd || integerClientEndHour < integerEnd))
+                                availability = false;
+                        
+                        }
+
+                    }
+                    mapObjects.ElementAt(i).availability = availability;
+                    MessageBox.Show(availability.ToString());
+                }
+            }
+            return mapObjects;
+
+        }
+
+        public static int getNewReservationCode ()
+        {
+            int noOfReservations = 0;
+
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+            string query = String.Format("SELECT COUNT(ReservationID) FROM Reservations");
+            DataSet dataSet = new DataSet();
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, connectionString);
+            sqlDataAdapter.Fill(dataSet, "nr");
+            foreach (DataRow dataRow in dataSet.Tables["nr"].Rows)  noOfReservations =int.Parse( dataRow.ItemArray.GetValue(0).ToString());
+
+
+            noOfReservations += 100;
+            return noOfReservations;
+
+        }
+        public static void makeReservation(int restaurantID, int clientID, DateTime Day, DateTime startHour, DateTime endHour, int mapObjectID, int reservationCode, int totalPrice)
+        {
+            SqlConnection sqlConnection = new SqlConnection(connectionString);
+
+            // MessageBox.Show(Day.Date.ToString());
+            string day;
+            string month;
+            string year = Day.Year.ToString();
+            if (int.Parse(Day.Day.ToString()) < 10) day = "0" + Day.Day.ToString();
+            else  day = Day.Day.ToString();
+            if (int.Parse(Day.Month.ToString()) < 10) month = "0" + Day.Month.ToString();
+            else month = Day.Month.ToString();
+
+
+            string date = month + '/' + day + '/' + year;
+
+            MessageBox.Show(date);
+            string query = String.Format("INSERT INTO Reservations(ReservationCode, Day, StartHour, EndHour, CLient, MapObject, Restaurant, TotalPrice) VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}')",reservationCode,date,startHour.TimeOfDay,endHour.TimeOfDay,clientID,mapObjectID,restaurantID,totalPrice);
+            sqlConnection.Open();
+            SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+            sqlCommand.ExecuteNonQuery();
+
+            sqlConnection.Close();
         }
 
     }

@@ -28,6 +28,7 @@ namespace OwnerDesign
             foreach (MapObject ob in objects)
             {
                 ob.saveCoordinates();
+                MessageBox.Show(ob.x.ToString() + " "+ ob.y.ToString());
             }
             MessageBox.Show("Succes");
         }

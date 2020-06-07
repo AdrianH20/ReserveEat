@@ -99,6 +99,12 @@
     <Compile Include="Controls\CardViewControl.Designer.cs">
       <DependentUpon>CardViewControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\MapObject.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\MapObject.designer.cs">
+      <DependentUpon>MapObject.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\MenuControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -166,10 +172,14 @@
     <Compile Include="Models\RestaurantModel.cs" />
     <Compile Include="Models\RestaurantRatings.cs" />
     <Compile Include="Models\ReviewModel.cs" />
+    <Compile Include="Models\Shape.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Controls\CardViewControl.resx">
       <DependentUpon>CardViewControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\MapObject.resx">
+      <DependentUpon>MapObject.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\MenuControl.resx">
       <DependentUpon>MenuControl.cs</DependentUpon>

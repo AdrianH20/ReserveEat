@@ -23,6 +23,8 @@ namespace OwnerDesign
         public Color color { get; set; }
         public int noCh { get; set; }
 
+        
+
         Graphics g;
         List<Shape> shapes = new List<Shape>();
         public MapObject()

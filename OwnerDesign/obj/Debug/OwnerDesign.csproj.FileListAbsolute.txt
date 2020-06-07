@@ -25,3 +25,16 @@ C:\Users\Adrian\Desktop\OwnerDesign\obj\Debug\OwnerDesign.UserControl3.resources
 C:\Users\Adrian\Desktop\OwnerDesign\obj\Debug\OwnerDesign.csproj.GenerateResource.cache
 C:\Users\Adrian\Desktop\OwnerDesign\obj\Debug\OwnerDesign.exe
 C:\Users\Adrian\Desktop\OwnerDesign\obj\Debug\OwnerDesign.pdb
+C:\Users\Adrian\Desktop\ReserveEat\OwnerDesign\bin\Debug\OwnerDesign.exe.config
+C:\Users\Adrian\Desktop\ReserveEat\OwnerDesign\bin\Debug\OwnerDesign.exe
+C:\Users\Adrian\Desktop\ReserveEat\OwnerDesign\bin\Debug\OwnerDesign.pdb
+C:\Users\Adrian\Desktop\ReserveEat\OwnerDesign\obj\Debug\OwnerDesign.csprojAssemblyReference.cache
+C:\Users\Adrian\Desktop\ReserveEat\OwnerDesign\obj\Debug\OwnerDesign.Form1.resources
+C:\Users\Adrian\Desktop\ReserveEat\OwnerDesign\obj\Debug\OwnerDesign.MapObject.resources
+C:\Users\Adrian\Desktop\ReserveEat\OwnerDesign\obj\Debug\OwnerDesign.Properties.Resources.resources
+C:\Users\Adrian\Desktop\ReserveEat\OwnerDesign\obj\Debug\OwnerDesign.UserControl1.resources
+C:\Users\Adrian\Desktop\ReserveEat\OwnerDesign\obj\Debug\OwnerDesign.UserControl2.resources
+C:\Users\Adrian\Desktop\ReserveEat\OwnerDesign\obj\Debug\OwnerDesign.UserControl3.resources
+C:\Users\Adrian\Desktop\ReserveEat\OwnerDesign\obj\Debug\OwnerDesign.csproj.GenerateResource.cache
+C:\Users\Adrian\Desktop\ReserveEat\OwnerDesign\obj\Debug\OwnerDesign.exe
+C:\Users\Adrian\Desktop\ReserveEat\OwnerDesign\obj\Debug\OwnerDesign.pdb

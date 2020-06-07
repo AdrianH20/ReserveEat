@@ -12,6 +12,8 @@ using RestaurantRatings = Client.Models.RestaurantRatings;
 
 using MenuControl = Client.Controls.MenuControl;
 using Order = Client.Models.Order;
+
+using MapObject = Client.MapObject;
 using GMap.NET.MapProviders;
 
 namespace Client.Forms
@@ -25,11 +27,21 @@ namespace Client.Forms
         private string _Path;
         private int _Stars;
 
+        
+
+
         public int  client_id;
+
+
 
         List<MenuModel> menusModels = new  List<MenuModel>();
 
         List<ReviewModel> reviews = new List<ReviewModel>();
+
+         public  List<MapObject> mapObjects = new List<MapObject>();
+
+
+        public MapObject selectedTable = null;
 
         public List<Order> orders = new List<Order>();
         public RestaurantForm(int id, int client_id)
@@ -54,6 +66,7 @@ namespace Client.Forms
             RestaurantModel restaurantModel = API.SQLDatabase.GetRestaurant(_Id);
 
             menusPanel.Visible = false;
+            mapOuterPanel.Visible = false;
 
             _NameRestaurant = restaurantModel.Name;
             _Description = restaurantModel.Description;
@@ -117,6 +130,7 @@ namespace Client.Forms
         {
             popUp.Location = new Point(0, 224);
             menusPanel.Visible = false;
+            mapOuterPanel.Visible = false;
             //view the map
 
         }
@@ -125,7 +139,9 @@ namespace Client.Forms
         {
             popUp.Location = new Point(0, 377);
             //view the menu
+            mapOuterPanel.Visible = false;
             menusPanel.Visible = true;
+
 
 
             menusModels = API.SQLDatabase.getMenus(_Id);
@@ -157,9 +173,80 @@ namespace Client.Forms
 
         private void reserveBtn_Click(object sender, EventArgs e)
         {
+            mapObjects.Clear();
+            selectedTable = null;
             popUp.Location = new Point(0, 300);
+            menusPanel.Visible = false;
+            mapOuterPanel.Visible = true;
+
+
+            startHourComboBox.SelectedItem = "08:00";
+            updateEndHour("08:00");
+            button1.BackColor = Color.FromArgb(41, 39, 40);
+
+           mapObjects =  API.SQLDatabase.GetMapObjects(_Id, dateTimePicker1.Value, startHourComboBox.SelectedItem.ToString(), endHourComboBox.SelectedItem.ToString());
+            updateMap(mapObjects); 
+
         }
 
+
+        public void updateMap(List<MapObject> mapObjects)
+        {
+            mapPanel.Controls.Clear();
+            foreach(MapObject mapObject in mapObjects)
+            {
+                if(mapObject.type == 1)
+                {
+                    if (mapObject.availability == false) mapObject.Color = Color.FromArgb(150, 150, 150);
+                    mapObject.createChairs(mapObject.noCh);
+                    mapObject.SetMap(mapObject.x, mapObject.y);
+                    mapObject.createTable();
+
+                    mapObject.RestaurantForm = this;
+                    mapPanel.Controls.Add(mapObject);
+                    mapObject.Show();
+                }
+                if (mapObject.type == 4)
+                {
+                    mapObject.RestaurantForm = this;
+                    mapObject.Color = Color.FromArgb(156, 82, 139);
+                    mapObject.SetMap(mapObject.x, mapObject.y);
+                    mapObject.createStage(mapObject.width,mapObject.height);
+
+
+                    mapPanel.Controls.Add(mapObject);
+                    mapObject.Show();
+                }
+                if(mapObject.type == 2)
+                {
+                    mapObject.RestaurantForm = this;
+                    mapObject.Color = Color.FromArgb(156, 82, 139);
+                    mapObject.SetMap(mapObject.x, mapObject.y);
+                    mapObject.createBar( mapObject.width, mapObject.height);
+
+                    mapPanel.Controls.Add(mapObject);
+                    mapObject.Show();
+
+                }
+            }
+
+        }
+        public void updateEndHour(string hour)
+        {
+            endHourComboBox.Items.Clear();
+            DateTime dateTime = DateTime.Parse(hour);
+            int integerHour = int.Parse(dateTime.Hour.ToString());
+
+            for (int i = integerHour + 1; i <= 20; i++)
+            {
+                endHourComboBox.Items.Add(i + ":00");
+            }
+
+            endHourComboBox.SelectedIndex = 0;
+
+
+
+        }
         private void reviewControl1_Load(object sender, EventArgs e)
         {
 
@@ -167,6 +254,64 @@ namespace Client.Forms
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            mapObjects.Clear();
+            mapObjects = API.SQLDatabase.GetMapObjects(_Id, dateTimePicker1.Value, startHourComboBox.SelectedItem.ToString(), endHourComboBox.SelectedItem.ToString());
+            updateMap(mapObjects);
+        }
+
+        private void startHourComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            mapObjects.Clear();
+
+            updateEndHour(startHourComboBox.SelectedItem.ToString());
+            mapObjects = API.SQLDatabase.GetMapObjects(_Id, dateTimePicker1.Value, startHourComboBox.SelectedItem.ToString(), endHourComboBox.SelectedItem.ToString());
+            updateMap(mapObjects);
+        }
+
+        private void endHourComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            mapObjects.Clear();
+            mapObjects = API.SQLDatabase.GetMapObjects(_Id, dateTimePicker1.Value, startHourComboBox.SelectedItem.ToString(), endHourComboBox.SelectedItem.ToString());
+            updateMap(mapObjects);
+        }
+
+        public int getOrdersTotalPrice(List<Order> orders)
+        {
+            int totalPrice = 0;
+            foreach (Order order in orders)
+                totalPrice += order.Quantity * order.Price;
+
+
+            return totalPrice;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            if (selectedTable != null)
+            {
+
+                int reservationCode = API.SQLDatabase.getNewReservationCode();
+                int MapObjectID = selectedTable.id;
+                int restaurantID = _Id;
+                int clientID = client_id;
+                int totalPrice = getOrdersTotalPrice(orders);
+                API.SQLDatabase.makeReservation(restaurantID, clientID, dateTimePicker1.Value, DateTime.Parse(startHourComboBox.SelectedItem.ToString()), DateTime.Parse(endHourComboBox.SelectedItem.ToString()), MapObjectID, reservationCode, totalPrice);
+                updateMap(mapObjects);
+
+            }
+            else MessageBox.Show("Please select a table!");
+
 
         }
     }

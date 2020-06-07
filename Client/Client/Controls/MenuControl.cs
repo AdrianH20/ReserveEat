@@ -26,11 +26,16 @@ namespace Client.Controls
 
         private void addBtn_Click(object sender, EventArgs e)
         {
-            Order order = new Order();
-            order.ID = menu_id;
-            order.Quantity = (int)quantityNumericUpDown.Value;
-
-            restaurantForm.orders.Add(order);
+            if (this.quantityNumericUpDown.Value != 0)
+            {
+                Order order = new Order();
+                order.ID = menu_id;
+                order.Quantity = (int)quantityNumericUpDown.Value;
+                order.Price = int.Parse(priceLabel.Text.Remove(priceLabel.Text.Length-3));
+                restaurantForm.orders.Add(order);
+                MessageBox.Show("Your order has been successfully added!");
+            }
+            else MessageBox.Show("Please select a quantity for menu");
             
         }
 
