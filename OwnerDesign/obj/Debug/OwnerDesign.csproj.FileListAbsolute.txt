@@ -38,3 +38,17 @@ C:\Users\Adrian\Desktop\ReserveEat\OwnerDesign\obj\Debug\OwnerDesign.UserControl
 C:\Users\Adrian\Desktop\ReserveEat\OwnerDesign\obj\Debug\OwnerDesign.csproj.GenerateResource.cache
 C:\Users\Adrian\Desktop\ReserveEat\OwnerDesign\obj\Debug\OwnerDesign.exe
 C:\Users\Adrian\Desktop\ReserveEat\OwnerDesign\obj\Debug\OwnerDesign.pdb
+C:\Users\bombo\OneDrive\Desktop\ReserveEat\OwnerDesign\bin\Debug\OwnerDesign.exe.config
+C:\Users\bombo\OneDrive\Desktop\ReserveEat\OwnerDesign\bin\Debug\OwnerDesign.exe
+C:\Users\bombo\OneDrive\Desktop\ReserveEat\OwnerDesign\bin\Debug\OwnerDesign.pdb
+C:\Users\bombo\OneDrive\Desktop\ReserveEat\OwnerDesign\obj\Debug\OwnerDesign.csprojAssemblyReference.cache
+C:\Users\bombo\OneDrive\Desktop\ReserveEat\OwnerDesign\obj\Debug\OwnerDesign.Form1.resources
+C:\Users\bombo\OneDrive\Desktop\ReserveEat\OwnerDesign\obj\Debug\OwnerDesign.MapObject.resources
+C:\Users\bombo\OneDrive\Desktop\ReserveEat\OwnerDesign\obj\Debug\OwnerDesign.Properties.Resources.resources
+C:\Users\bombo\OneDrive\Desktop\ReserveEat\OwnerDesign\obj\Debug\OwnerDesign.UserControl1.resources
+C:\Users\bombo\OneDrive\Desktop\ReserveEat\OwnerDesign\obj\Debug\OwnerDesign.UserControl2.resources
+C:\Users\bombo\OneDrive\Desktop\ReserveEat\OwnerDesign\obj\Debug\OwnerDesign.UserControl3.resources
+C:\Users\bombo\OneDrive\Desktop\ReserveEat\OwnerDesign\obj\Debug\OwnerDesign.csproj.GenerateResource.cache
+C:\Users\bombo\OneDrive\Desktop\ReserveEat\OwnerDesign\obj\Debug\OwnerDesign.csproj.CoreCompileInputs.cache
+C:\Users\bombo\OneDrive\Desktop\ReserveEat\OwnerDesign\obj\Debug\OwnerDesign.exe
+C:\Users\bombo\OneDrive\Desktop\ReserveEat\OwnerDesign\obj\Debug\OwnerDesign.pdb
